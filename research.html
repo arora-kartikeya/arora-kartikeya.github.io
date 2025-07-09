@@ -28,6 +28,10 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
+            width: 100%;
+            overflow-x: hidden;
+            min-width: 320px;
+            padding-top: 80px; /* Account for fixed header */
         }
 
         .container {
@@ -36,14 +40,16 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* Slim Fixed Header */
         header {
             background: linear-gradient(135deg, var(--usc-cardinal), var(--usc-dark-red));
             color: white;
-            padding: 2rem 0;
+            padding: 0.8rem 0;
             box-shadow: 0 2px 10px var(--shadow);
-            position: relative;
-            z-index: 100;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
 
         .header-content {
@@ -312,7 +318,7 @@
     </style>
 </head>
 <body>
-    <header id="mainHeader">
+    <header>
         <div class="container">
             <div class="header-content">
                 <div class="header-left">
@@ -488,12 +494,6 @@
     </script>
 </body>
 </html>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 [Your Name]. All rights reserved. | University of Southern California</p>
-            <p>Built with passion for quantum computing and education</p>
         </div>
     </footer>
 
