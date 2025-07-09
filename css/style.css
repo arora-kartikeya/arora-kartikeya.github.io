@@ -184,42 +184,45 @@ body {
 }
 
 .btn {
-    padding: 12px 24px;
-    border-radius: 8px;
+    padding: 14px 28px;
+    border-radius: 6px;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
-    border: 2px solid transparent;
+    border: none;
     cursor: pointer;
     font-size: 1rem;
     text-align: center;
     font-family: inherit;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
-    background: var(--gradient);
+    background: var(--usc-cardinal);
     color: var(--white);
-    border: 2px solid transparent;
+    box-shadow: 0 2px 8px rgba(153, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(153, 0, 0, 0.3);
-    background: var(--usc-cardinal);
+    background: #7a0000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(153, 0, 0, 0.3);
 }
 
 .btn-outline {
-    border: 2px solid var(--usc-cardinal);
+    background: transparent;
     color: var(--usc-cardinal);
-    background: var(--white);
+    border: 2px solid var(--usc-cardinal);
+    box-shadow: 0 2px 8px rgba(153, 0, 0, 0.1);
 }
 
 .btn-outline:hover {
     background: var(--usc-cardinal);
     color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(153, 0, 0, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(153, 0, 0, 0.25);
 }
 
 .social-links {
@@ -604,22 +607,23 @@ body {
 }
 
 .contact-form button[type="submit"] {
-    background: var(--gradient);
+    background: var(--usc-cardinal);
     color: var(--white);
-    border: 2px solid transparent;
-    padding: 12px 24px;
-    border-radius: 8px;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 6px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1rem;
     width: 100%;
+    box-shadow: 0 2px 8px rgba(153, 0, 0, 0.2);
 }
 
 .contact-form button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(153, 0, 0, 0.3);
-    background: var(--usc-cardinal);
+    background: #7a0000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(153, 0, 0, 0.3);
 }
 
 /* Footer */
