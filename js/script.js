@@ -144,33 +144,72 @@ window.addEventListener('load', () => {
     }
 });
 
-// Quantum circuit animation
+// Quantum circuit animation - improved performance
 function animateQuantumCircuit() {
     const gates = document.querySelectorAll('.quantum-gate');
+    if (gates.length === 0) return;
+    
     gates.forEach((gate, index) => {
         setTimeout(() => {
             gate.style.animation = 'none';
             void gate.offsetWidth; // Trigger reflow
             gate.style.animation = 'pulse 2s infinite';
-        }, index * 500);
+            gate.style.animationDelay = `${index * 0.7}s`;
+        }, index * 200);
     });
 }
 
-// Start quantum animation on page load
+// Start quantum animation on page load with delay
 window.addEventListener('load', () => {
-    setTimeout(animateQuantumCircuit, 1000);
-    setInterval(animateQuantumCircuit, 6000); // Repeat every 6 seconds
+    setTimeout(() => {
+        animateQuantumCircuit();
+        // Restart animation every 8 seconds
+        setInterval(animateQuantumCircuit, 8000);
+    }, 1500);
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
+// Parallax effect for hero section - improved with mobile optimization
+let ticking = false;
+
+function updateParallax() {
     const scrolled = window.pageYOffset;
     const parallaxElements = document.querySelectorAll('.quantum-visualization');
+    const isMobile = window.innerWidth <= 768;
     
     parallaxElements.forEach(element => {
-        const speed = 0.5;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
+        if (!isMobile) {
+            // Only apply parallax on desktop
+            const speed = 0.3;
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        } else {
+            // Reset transform on mobile
+            element.style.transform = 'translateY(0)';
+        }
     });
+    
+    ticking = false;
+}
+
+function requestParallaxUpdate() {
+    if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+    }
+}
+
+window.addEventListener('scroll', requestParallaxUpdate);
+
+// Reset parallax on window resize
+window.addEventListener('resize', () => {
+    const parallaxElements = document.querySelectorAll('.quantum-visualization');
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        parallaxElements.forEach(element => {
+            element.style.transform = 'translateY(0)';
+        });
+    }
 });
 
 // Add loading animation

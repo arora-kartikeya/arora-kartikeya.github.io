@@ -255,12 +255,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 400px;
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 .quantum-circuit {
     position: relative;
     width: 300px;
     height: 200px;
+    transform-style: preserve-3d;
 }
 
 .qubit-line {
@@ -269,6 +273,7 @@ body {
     height: 2px;
     background: var(--usc-cardinal);
     opacity: 0.7;
+    border-radius: 1px;
 }
 
 .qubit-line:nth-child(1) { top: 20%; }
@@ -282,6 +287,9 @@ body {
     background: var(--usc-gold);
     border-radius: 8px;
     animation: pulse 2s infinite;
+    transform-origin: center;
+    will-change: transform, opacity;
+    box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
 }
 
 .gate-1 {
@@ -303,8 +311,16 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.1); }
+    0%, 100% { 
+        opacity: 0.6; 
+        transform: scale(1) translateZ(0); 
+        box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.1) translateZ(0); 
+        box-shadow: 0 4px 16px rgba(255, 204, 0, 0.5);
+    }
 }
 
 /* Sections */
@@ -711,6 +727,27 @@ body {
         width: 200px;
         text-align: center;
     }
+    
+    .quantum-visualization {
+        height: 300px;
+        transform: none !important;
+    }
+    
+    .quantum-circuit {
+        width: 250px;
+        height: 150px;
+    }
+    
+    .quantum-gate {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /* Disable parallax animations on mobile for better performance */
+    .quantum-visualization * {
+        transform: none !important;
+        will-change: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -725,5 +762,19 @@ body {
     .research-grid,
     .tutorials-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .quantum-visualization {
+        height: 250px;
+    }
+    
+    .quantum-circuit {
+        width: 200px;
+        height: 120px;
+    }
+    
+    .quantum-gate {
+        width: 25px;
+        height: 25px;
     }
 }
