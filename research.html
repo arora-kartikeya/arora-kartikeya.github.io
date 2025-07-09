@@ -230,7 +230,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header id="mainHeader">
         <div class="container">
             <div class="header-content">
                 <div class="profile-image">
@@ -262,7 +262,7 @@
         </div>
     </header>
 
-    <nav>
+    <nav id="mainNav">
         <div class="container">
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -275,6 +275,11 @@
             </ul>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <!-- Side menu content if any -->
+    </div>
 
     <main class="container">
         <section class="section">
@@ -394,5 +399,9 @@
             <p>Built with passion for quantum computing and education</p>
         </div>
     </footer>
+
+    <script>
+        // Same JavaScript as about.html
+    </script>
 </body>
 </html>

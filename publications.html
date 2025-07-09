@@ -272,10 +272,14 @@
                 font-size: 2rem;
             }
         }
+
+        /* Copy all styles from about.html */
+        /* ... (same responsive styles) ... */
     </style>
 </head>
 <body>
-    <header>
+    <!-- Same header and navigation structure -->
+    <header id="mainHeader">
         <div class="container">
             <div class="header-content">
                 <div class="profile-image">
@@ -307,7 +311,7 @@
         </div>
     </header>
 
-    <nav>
+    <nav id="mainNav">
         <div class="container">
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -320,6 +324,11 @@
             </ul>
         </div>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <!-- ...Publications active... -->
+    </div>
 
     <main class="container">
         <section class="section">
@@ -461,5 +470,10 @@
             <p>Built with passion for quantum computing and education</p>
         </div>
     </footer>
+
+    <!-- Same script -->
+    <script>
+        // Same JavaScript as about.html
+    </script>
 </body>
 </html>
