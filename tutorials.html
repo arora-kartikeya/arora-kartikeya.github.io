@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials - [Your Name] | USC Physics</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --usc-cardinal: #990000;
+            --usc-gold: #FFCC00;
+            --usc-dark-red: #7A0000;
+            --text-dark: #2c3e50;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--usc-cardinal), var(--usc-dark-red));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--usc-gold);
+            object-fit: cover;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-light);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-text .title {
+            font-size: 1.2rem;
+            color: var(--usc-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .header-text .affiliation {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--usc-dark-red);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--usc-gold);
+            color: var(--usc-cardinal);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--usc-gold);
+            color: var(--usc-cardinal);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .section h2 {
+            color: var(--usc-cardinal);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--usc-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .tutorial {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--usc-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .tutorial:hover {
+            transform: translateX(5px);
+        }
+
+        .tutorial h3 {
+            color: var(--usc-cardinal);
+            margin-bottom: 0.5rem;
+        }
+
+        .tutorial .date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tutorial .difficulty {
+            display: inline-block;
+            background: var(--usc-cardinal);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .tutorial .difficulty.beginner {
+            background: #28a745;
+        }
+
+        .tutorial .difficulty.intermediate {
+            background: #ffc107;
+            color: var(--text-dark);
+        }
+
+        .tutorial .difficulty.advanced {
+            background: var(--usc-cardinal);
+        }
+
+        .tutorial-links {
+            margin-top: 1rem;
+        }
+
+        .tutorial-links a {
+            display: inline-block;
+            background: var(--usc-gold);
+            color: var(--usc-cardinal);
+            padding: 0.3rem 0.8rem;
+            margin: 0.2rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tutorial-links a:hover {
+            background: var(--usc-cardinal);
+            color: white;
+        }
+
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--usc-cardinal);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .tutorial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="header-text">
+                    <h1>[Your Name]</h1>
+                    <div class="title">PhD Student in Physics</div>
+                    <div class="affiliation">Quantum Computing Research | University of Southern California</div>
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="mailto:youremail@usc.edu" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="tutorials.html" class="nav-link active">Tutorials</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+            <h2>Tutorials & Educational Content</h2>
+            <p>A collection of tutorials, guides, and educational materials on quantum computing, quantum algorithms, and quantum machine learning. These resources are designed for students, researchers, and anyone interested in learning about quantum technologies.</p>
+        </section>
+
+        <section class="section">
+            <h2>Quantum Computing Fundamentals</h2>
+            <div class="tutorial-grid">
+                <div class="tutorial">
+                    <div class="difficulty beginner">Beginner</div>
+                    <h3>Introduction to Quantum Error Correction</h3>
+                    <div class="date">January 2024</div>
+                    <p>A comprehensive guide to <strong>quantum error correction</strong>, covering the basics of <strong>quantum noise</strong>, <strong>stabilizer codes</strong>, and practical implementations for <strong>NISQ devices</strong>. Perfect for newcomers to quantum computing who want to understand how we protect quantum information.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fab fa-github"></i> Code Examples</a>
+                        <a href="#"><i class="fas fa-play"></i> Interactive Demo</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty beginner">Beginner</div>
+                    <h3>Quantum Mechanics for Computer Scientists</h3>
+                    <div class="date">December 2023</div>
+                    <p>Bridge the gap between classical computing and quantum mechanics. This tutorial explains quantum principles through the lens of computation, covering <strong>qubits</strong>, <strong>superposition</strong>, <strong>entanglement</strong>, and <strong>measurement</strong>.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fas fa-file-pdf"></i> PDF Download</a>
+                        <a href="#"><i class="fas fa-calculator"></i> Exercises</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty intermediate">Intermediate</div>
+                    <h3>Building Your First Variational Quantum Algorithm</h3>
+                    <div class="date">November 2023</div>
+                    <p>Step-by-step tutorial on implementing <strong>VQE from scratch</strong>, including <strong>quantum circuit design</strong>, optimization, and <strong>error mitigation techniques</strong>. Includes practical examples with molecular simulation.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fab fa-python"></i> Python Notebook</a>
+                        <a href="#"><i class="fab fa-youtube"></i> Video Guide</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Quantum Machine Learning</h2>
+            <div class="tutorial-grid">
+                <div class="tutorial">
+                    <div class="difficulty intermediate">Intermediate</div>
+                    <h3>Quantum Machine Learning: Separating Hype from Reality</h3>
+                    <div class="date">October 2023</div>
+                    <p>An honest assessment of <strong>quantum machine learning</strong> prospects, discussing current limitations and future possibilities in <strong>quantum AI</strong>. Includes practical benchmarks and when to use quantum vs classical ML.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Article</a>
+                        <a href="#"><i class="fas fa-chart-bar"></i> Benchmarks</a>
+                        <a href="#"><i class="fas fa-comments"></i> Discussion</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty advanced">Advanced</div>
+                    <h3>Quantum Neural Networks: Theory and Implementation</h3>
+                    <div class="date">September 2023</div>
+                    <p>Deep dive into <strong>quantum neural networks</strong>, covering <strong>parameterized quantum circuits</strong>, <strong>gradient computation</strong>, and <strong>barren plateau mitigation</strong>. Includes implementations in Qiskit and PennyLane.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fab fa-github"></i> Full Code</a>
+                        <a href="#"><i class="fas fa-flask"></i> Experiments</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty intermediate">Intermediate</div>
+                    <h3>Quantum Feature Maps and Kernel Methods</h3>
+                    <div class="date">August 2023</div>
+                    <p>Explore how quantum computers can enhance classical machine learning through <strong>quantum feature maps</strong> and <strong>quantum kernels</strong>. Practical examples with real datasets and performance comparisons.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fas fa-database"></i> Datasets</a>
+                        <a href="#"><i class="fab fa-python"></i> Notebooks</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Practical Quantum Programming</h2>
+            <div class="tutorial-grid">
+                <div class="tutorial">
+                    <div class="difficulty beginner">Beginner</div>
+                    <h3>Getting Started with Qiskit</h3>
+                    <div class="date">July 2023</div>
+                    <p>Complete beginner's guide to <strong>Qiskit</strong>, IBM's quantum computing framework. Covers installation, basic circuits, simulation, and running on real quantum hardware.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fab fa-github"></i> Example Code</a>
+                        <a href="#"><i class="fas fa-video"></i> Video Series</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty intermediate">Intermediate</div>
+                    <h3>Noise Characterization and Mitigation</h3>
+                    <div class="date">June 2023</div>
+                    <p>Learn how to characterize and mitigate noise in <strong>NISQ devices</strong>. Covers <strong>process tomography</strong>, <strong>randomized benchmarking</strong>, and practical error mitigation techniques.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fas fa-chart-line"></i> Analysis Tools</a>
+                        <a href="#"><i class="fab fa-python"></i> Code Library</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty advanced">Advanced</div>
+                    <h3>Quantum Algorithm Design Patterns</h3>
+                    <div class="date">May 2023</div>
+                    <p>Advanced guide to designing quantum algorithms, covering common patterns, optimization strategies, and how to adapt classical algorithms for quantum advantage.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fas fa-lightbulb"></i> Design Patterns</a>
+                        <a href="#"><i class="fas fa-code"></i> Algorithm Library</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Video Lectures & Workshops</h2>
+            <div class="tutorial">
+                <h3>Quantum Computing Workshop Series</h3>
+                <div class="date">Ongoing - Updated Monthly</div>
+                <p>Regular workshop series covering fundamental and advanced topics in quantum computing. Each session includes theoretical background, practical examples, and Q&A segments.</p>
+                <div class="tutorial-links">
+                    <a href="#"><i class="fab fa-youtube"></i> Watch Playlist</a>
+                    <a href="#"><i class="fas fa-calendar"></i> Schedule</a>
+                    <a href="#"><i class="fas fa-download"></i> Slides</a>
+                </div>
+            </div>
+
+            <div class="tutorial">
+                <h3>Guest Lecture: "The Future of Quantum Computing"</h3>
+                <div class="date">March 2024</div>
+                <p>Invited lecture at USC discussing the current state and future prospects of quantum computing, covering both near-term applications and long-term quantum advantage scenarios.</p>
+                <div class="tutorial-links">
+                    <a href="#"><i class="fab fa-youtube"></i> Watch Lecture</a>
+                    <a href="#"><i class="fas fa-file-pdf"></i> Presentation</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Q&A Session</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Interactive Learning Tools</h2>
+            <p>Explore quantum concepts through interactive simulations and visualization tools designed to make quantum computing more accessible and intuitive.</p>
+            
+            <div class="tutorial-grid">
+                <div class="tutorial">
+                    <h3>Quantum Circuit Visualizer</h3>
+                    <p>Interactive tool for building and visualizing quantum circuits, with real-time state evolution and measurement probability calculations.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-play"></i> Launch Tool</a>
+                        <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <h3>Quantum Error Correction Simulator</h3>
+                    <p>Simulate various quantum error correction codes and explore how they protect quantum information against different types of noise.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-play"></i> Try Simulator</a>
+                        <a href="#"><i class="fas fa-info-circle"></i> User Guide</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 [Your Name]. All rights reserved. | University of Southern California</p>
+            <p>Built with passion for quantum computing and education</p>
+        </div>
+    </footer>
+</body>
+</html>
