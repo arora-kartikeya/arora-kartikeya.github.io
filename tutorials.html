@@ -49,137 +49,80 @@
         header {
             background: linear-gradient(135deg, var(--usc-cardinal), var(--usc-dark-red));
             color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px var(--shadow);
-            transition: all 0.3s ease;
-            width: 100%;
-            position: relative;
-        }
-
-        header.scrolled {
             padding: 0.8rem 0;
+            box-shadow: 0 2px 10px var(--shadow);
+            width: 100%;
             position: fixed;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            background: linear-gradient(135deg, rgba(153, 0, 0, 0.95), rgba(122, 0, 0, 0.95));
+            transition: all 0.3s ease;
         }
 
         .header-content {
             display: flex;
             align-items: center;
-            gap: 2rem;
-            transition: all 0.3s ease;
+            gap: 1rem;
+            justify-content: space-between;
         }
 
-        header.scrolled .header-content {
+        .header-left {
+            display: flex;
+            align-items: center;
             gap: 1rem;
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            border: 4px solid var(--usc-gold);
+            border: 2px solid var(--usc-gold);
             object-fit: cover;
             background: var(--bg-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 1.5rem;
             color: var(--text-light);
-            transition: all 0.3s ease;
             flex-shrink: 0;
         }
 
-        header.scrolled .profile-image {
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            border-width: 2px;
-        }
-
         .header-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled .header-text h1 {
             font-size: 1.3rem;
-            margin-bottom: 0;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .header-text .title {
-            font-size: 1.2rem;
-            color: var(--usc-gold);
-            margin-bottom: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled .header-text .title {
             font-size: 0.9rem;
-            margin-bottom: 0;
+            color: var(--usc-gold);
+            margin: 0;
         }
 
-        .header-text .affiliation {
-            font-size: 1rem;
-            opacity: 0.9;
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled .header-text .affiliation {
-            display: none;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--usc-dark-red);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled + nav {
-            display: none;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .nav-links {
+        /* Desktop Navigation */
+        .desktop-nav {
             display: flex;
             list-style: none;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
+            gap: 1.5rem;
+            margin: 0;
         }
 
-        .nav-links a {
+        .desktop-nav a {
             color: white;
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 5px;
             transition: all 0.3s ease;
             font-weight: 500;
             white-space: nowrap;
+            font-size: 0.9rem;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .desktop-nav a:hover, .desktop-nav a.active {
             background: var(--usc-gold);
             color: var(--usc-cardinal);
         }
 
-        /* Mobile Menu Button in Header */
+        /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
             background: rgba(255, 255, 255, 0.1);
@@ -189,11 +132,6 @@
             cursor: pointer;
             padding: 0.5rem;
             border-radius: 5px;
-            margin-left: auto;
-        }
-
-        header.scrolled .mobile-menu-btn {
-            display: block;
         }
 
         /* Side Menu */
@@ -274,43 +212,11 @@
             visibility: visible;
         }
 
-        /* Social Links */
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled .social-links {
-            display: none;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            padding: 0.5rem;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .social-links a:hover {
-            background: var(--usc-gold);
-            color: var(--usc-cardinal);
-            transform: translateY(-2px);
-        }
-
         /* Main Content */
         main {
             padding: 3rem 0;
             width: 100%;
-            transition: margin-top 0.3s ease;
-        }
-
-        header.scrolled ~ main {
-            margin-top: 80px;
+            margin-top: 80px; /* Account for fixed header */
         }
 
         .section {
@@ -421,72 +327,21 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .tutorial-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 1.5rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-        }
-
         @media (max-width: 768px) {
-            .container {
-                padding: 0 10px;
-            }
-
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            header.scrolled .header-content {
-                flex-direction: row;
-                text-align: left;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-                font-size: 2.5rem;
-            }
-
-            header.scrolled .profile-image {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-
-            .header-text h1 {
-                font-size: 2rem;
-            }
-
-            header.scrolled .header-text h1 {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
+            .desktop-nav {
                 display: none;
             }
 
-            .tutorial-grid {
-                grid-template-columns: 1fr;
+            .mobile-menu-btn {
+                display: block;
             }
 
-            .section {
-                padding: 1.5rem;
-                margin-bottom: 2rem;
+            .header-text .title {
+                display: none;
             }
 
-            .section h2 {
-                font-size: 1.7rem;
+            .header-text h1 {
+                font-size: 1.1rem;
             }
 
             .side-menu {
@@ -496,24 +351,8 @@
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 0 8px;
-            }
-
             .header-text h1 {
-                font-size: 1.8rem;
-            }
-
-            header.scrolled .header-text h1 {
                 font-size: 1rem;
-            }
-
-            .section {
-                padding: 1rem;
-            }
-
-            .section h2 {
-                font-size: 1.5rem;
             }
 
             .side-menu {
@@ -522,48 +361,32 @@
                 padding: 1.5rem;
             }
         }
+
+        /* Desktop specific - hide side menu elements */
+        @media (min-width: 769px) {
+            .side-menu,
+            .menu-overlay {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header id="mainHeader">
         <div class="container">
             <div class="header-content">
-                <div class="profile-image">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="header-text">
-                    <h1>[Your Name]</h1>
-                    <div class="title">PhD Student in Physics</div>
-                    <div class="affiliation">Quantum Computing Research | University of Southern California</div>
-                    <div class="social-links">
-                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar">
-                            <i class="fas fa-graduation-cap"></i>
-                        </a>
-                        <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
-                            <i class="fab fa-orcid"></i>
-                        </a>
-                        <a href="mailto:youremail@usc.edu" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                <div class="header-left">
+                    <div class="profile-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="header-text">
+                        <h1>[Your Name]</h1>
+                        <div class="title">PhD Student in Physics</div>
                     </div>
                 </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <nav id="mainNav">
-        <div class="container">
-            <div class="nav-container">
-                <ul class="nav-links">
+                
+                <!-- Desktop Navigation -->
+                <ul class="desktop-nav">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="research.html" class="nav-link">Research</a></li>
@@ -572,11 +395,16 @@
                     <li><a href="tutorials.html" class="nav-link active">Tutorials</a></li>
                     <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Side Menu -->
+    <!-- Side Menu for Mobile -->
     <div class="menu-overlay" id="menuOverlay"></div>
     <div class="side-menu" id="sideMenu">
         <div class="side-menu-header">
@@ -654,6 +482,178 @@
                     <div class="tutorial-links">
                         <a href="#"><i class="fas fa-book-open"></i> Read Article</a>
                         <a href="#"><i class="fas fa-chart-bar"></i> Benchmarks</a>
+                        <a href="#"><i class="fas fa-comments"></i> Discussion</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty advanced">Advanced</div>
+                    <h3>Quantum Neural Networks: Theory and Implementation</h3>
+                    <div class="date">September 2023</div>
+                    <p>Deep dive into <strong>quantum neural networks</strong>, covering <strong>parameterized quantum circuits</strong>, <strong>gradient computation</strong>, and <strong>barren plateau mitigation</strong>. Includes implementations in Qiskit and PennyLane.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fab fa-github"></i> Full Code</a>
+                        <a href="#"><i class="fas fa-flask"></i> Experiments</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty intermediate">Intermediate</div>
+                    <h3>Quantum Feature Maps and Kernel Methods</h3>
+                    <div class="date">August 2023</div>
+                    <p>Explore how quantum computers can enhance classical machine learning through <strong>quantum feature maps</strong> and <strong>quantum kernels</strong>. Practical examples with real datasets and performance comparisons.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fas fa-database"></i> Datasets</a>
+                        <a href="#"><i class="fab fa-python"></i> Notebooks</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Practical Quantum Programming</h2>
+            <div class="tutorial-grid">
+                <div class="tutorial">
+                    <div class="difficulty beginner">Beginner</div>
+                    <h3>Getting Started with Qiskit</h3>
+                    <div class="date">July 2023</div>
+                    <p>Complete beginner's guide to <strong>Qiskit</strong>, IBM's quantum computing framework. Covers installation, basic circuits, simulation, and running on real quantum hardware.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fab fa-github"></i> Example Code</a>
+                        <a href="#"><i class="fas fa-video"></i> Video Series</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty intermediate">Intermediate</div>
+                    <h3>Noise Characterization and Mitigation</h3>
+                    <div class="date">June 2023</div>
+                    <p>Learn how to characterize and mitigate noise in <strong>NISQ devices</strong>. Covers <strong>process tomography</strong>, <strong>randomized benchmarking</strong>, and practical error mitigation techniques.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fas fa-chart-line"></i> Analysis Tools</a>
+                        <a href="#"><i class="fab fa-python"></i> Code Library</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <div class="difficulty advanced">Advanced</div>
+                    <h3>Quantum Algorithm Design Patterns</h3>
+                    <div class="date">May 2023</div>
+                    <p>Advanced guide to designing quantum algorithms, covering common patterns, optimization strategies, and how to adapt classical algorithms for quantum advantage.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
+                        <a href="#"><i class="fas fa-lightbulb"></i> Design Patterns</a>
+                        <a href="#"><i class="fas fa-code"></i> Algorithm Library</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Video Lectures & Workshops</h2>
+            <div class="tutorial">
+                <h3>Quantum Computing Workshop Series</h3>
+                <div class="date">Ongoing - Updated Monthly</div>
+                <p>Regular workshop series covering fundamental and advanced topics in quantum computing. Each session includes theoretical background, practical examples, and Q&A segments.</p>
+                <div class="tutorial-links">
+                    <a href="#"><i class="fab fa-youtube"></i> Watch Playlist</a>
+                    <a href="#"><i class="fas fa-calendar"></i> Schedule</a>
+                    <a href="#"><i class="fas fa-download"></i> Slides</a>
+                </div>
+            </div>
+
+            <div class="tutorial">
+                <h3>Guest Lecture: "The Future of Quantum Computing"</h3>
+                <div class="date">March 2024</div>
+                <p>Invited lecture at USC discussing the current state and future prospects of quantum computing, covering both near-term applications and long-term quantum advantage scenarios.</p>
+                <div class="tutorial-links">
+                    <a href="#"><i class="fab fa-youtube"></i> Watch Lecture</a>
+                    <a href="#"><i class="fas fa-file-pdf"></i> Presentation</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Q&A Session</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Interactive Learning Tools</h2>
+            <p>Explore quantum concepts through interactive simulations and visualization tools designed to make quantum computing more accessible and intuitive.</p>
+            
+            <div class="tutorial-grid">
+                <div class="tutorial">
+                    <h3>Quantum Circuit Visualizer</h3>
+                    <p>Interactive tool for building and visualizing quantum circuits, with real-time state evolution and measurement probability calculations.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-play"></i> Launch Tool</a>
+                        <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+
+                <div class="tutorial">
+                    <h3>Quantum Error Correction Simulator</h3>
+                    <p>Simulate various quantum error correction codes and explore how they protect quantum information against different types of noise.</p>
+                    <div class="tutorial-links">
+                        <a href="#"><i class="fas fa-play"></i> Try Simulator</a>
+                        <a href="#"><i class="fas fa-info-circle"></i> User Guide</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 [Your Name]. All rights reserved. | University of Southern California</p>
+            <p>Built with passion for quantum computing and education</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuClose = document.getElementById('sideMenuClose');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function openSideMenu() {
+            sideMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSideMenu() {
+            sideMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', openSideMenu);
+        }
+        if (sideMenuClose) {
+            sideMenuClose.addEventListener('click', closeSideMenu);
+        }
+        if (menuOverlay) {
+            menuOverlay.addEventListener('click', closeSideMenu);
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.side-nav-link').forEach(link => {
+            link.addEventListener('click', closeSideMenu);
+        });
+
+        // Close menu on window resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeSideMenu();
+            }
+        });
+    </script>
+</body>
+</html>
                         <a href="#"><i class="fas fa-comments"></i> Discussion</a>
                     </div>
                 </div>

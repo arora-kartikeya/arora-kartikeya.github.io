@@ -570,42 +570,18 @@
     <header id="mainHeader">
         <div class="container">
             <div class="header-content">
-                <div class="profile-image">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="header-text">
-                    <h1>[Your Name]</h1>
-                    <div class="title">PhD Student in Physics</div>
-                    <div class="affiliation">Quantum Computing Research | University of Southern California</div>
-                    <div class="social-links">
-                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar">
-                            <i class="fas fa-graduation-cap"></i>
-                        </a>
-                        <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
-                            <i class="fab fa-orcid"></i>
-                        </a>
-                        <a href="mailto:youremail@usc.edu" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                <div class="header-left">
+                    <div class="profile-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="header-text">
+                        <h1>[Your Name]</h1>
+                        <div class="title">PhD Student in Physics</div>
                     </div>
                 </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <nav id="mainNav">
-        <div class="container">
-            <div class="nav-container">
-                <ul class="nav-links">
+                
+                <!-- Desktop Navigation -->
+                <ul class="desktop-nav">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="research.html" class="nav-link">Research</a></li>
@@ -614,11 +590,16 @@
                     <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Side Menu -->
+    <!-- Side Menu for Mobile -->
     <div class="menu-overlay" id="menuOverlay"></div>
     <div class="side-menu" id="sideMenu">
         <div class="side-menu-header">
