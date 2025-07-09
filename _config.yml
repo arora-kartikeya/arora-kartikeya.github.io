@@ -1,0 +1,72 @@
+# Site settings
+title: "Kartikeya Arora - Quantum Computing Researcher"
+description: "PhD student in Electrical Engineering at USC specializing in quantum computing theory"
+url: "https://arora-kartikeya.github.io"
+baseurl: ""
+
+# Author information
+author:
+  name: "Kartikeya Arora"
+  email: "kartikeya@usc.edu"
+  bio: "PhD student in Electrical Engineering at USC working on quantum computing theory"
+  location: "Los Angeles, CA"
+  university: "University of Southern California"
+
+# Social links
+social:
+  github: "arora-kartikeya"
+  linkedin: "YOUR_LINKEDIN_USERNAME"
+  scholar: "YOUR_GOOGLE_SCHOLAR_ID"
+  orcid: "YOUR_ORCID_ID"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# SEO settings
+lang: en_US
+timezone: America/Los_Angeles
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .gitignore
+
+# Include files
+include:
+  - _pages
+  - assets
+
+# Collections
+collections:
+  tutorials:
+    output: true
+    permalink: /:collection/:name/
+  publications:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "tutorials"
+    values:
+      layout: "tutorial"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
