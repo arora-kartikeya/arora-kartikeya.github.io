@@ -45,7 +45,7 @@
             width: 100%;
         }
 
-        /* Header */
+        /* Header - Always Fixed */
         header {
             background: linear-gradient(135deg, var(--usc-cardinal), var(--usc-dark-red));
             color: white;
@@ -55,7 +55,6 @@
             position: fixed;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
         .header-content {
@@ -212,11 +211,11 @@
             visibility: visible;
         }
 
-        /* Main Content */
+        /* Main Content - Account for Fixed Header */
         main {
             padding: 3rem 0;
             width: 100%;
-            margin-top: 80px; /* Account for fixed header */
+            margin-top: 80px; /* Fixed offset for header */
         }
 
         .section {
@@ -653,6 +652,7 @@
         });
     </script>
 </body>
+</html>
 </html>
                         <a href="#"><i class="fas fa-comments"></i> Discussion</a>
                     </div>
