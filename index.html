@@ -478,9 +478,10 @@
     <nav>
         <div class="container">
             <ul class="nav-links">
-                <li><a href="#about" class="nav-link active">About</a></li>
-                <li><a href="#research" class="nav-link">Research</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#tutorials" class="nav-link">Tutorials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -489,79 +490,50 @@
     </nav>
 
     <main class="container">
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Welcome to my academic portfolio! I am a <strong>PhD student in Physics</strong> at the <strong>University of Southern California</strong>, specializing in <strong>quantum computing research</strong>. My work focuses on developing novel <strong>quantum algorithms</strong> and exploring the fundamental limits of <strong>quantum information processing</strong>.</p>
-                    
-                    <p>I am passionate about making <strong>quantum computing accessible</strong> through education and outreach. Through this website, I share <strong>tutorials</strong>, <strong>research insights</strong>, and resources for students and researchers interested in <strong>quantum computing</strong> and <strong>quantum physics</strong>.</p>
-                    
-                    <p>My research is supervised by [Advisor Name] in the [Lab Name] at <strong>USC</strong>, where I collaborate with an interdisciplinary team of physicists, computer scientists, and engineers to push the boundaries of <strong>quantum computation</strong>.</p>
-                </div>
-                <div class="research-interests">
-                    <h3>Research Interests</h3>
-                    <ul>
-                        <li>Quantum Algorithms</li>
-                        <li>Quantum Error Correction</li>
-                        <li>Quantum Machine Learning</li>
-                        <li>Quantum Optimization</li>
-                        <li>Quantum Simulation</li>
-                        <li>Quantum Cryptography</li>
-                    </ul>
+        <section id="about-summary" class="section">
+            <h2>About Me - Overview</h2>
+            <div class="about-text">
+                <p>Welcome to my academic portfolio! I am a <strong>PhD student in Physics</strong> at the <strong>University of Southern California</strong>, specializing in <strong>quantum computing research</strong>. My work focuses on developing novel <strong>quantum algorithms</strong> and exploring the fundamental limits of <strong>quantum information processing</strong>.</p>
+                
+                <p>I am passionate about making <strong>quantum computing accessible</strong> through education and outreach.</p>
+                
+                <div style="margin-top: 1.5rem;">
+                    <a href="about.html" style="background: var(--usc-cardinal); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500;">Learn More About Me →</a>
                 </div>
             </div>
         </section>
 
-        <section id="research" class="section">
-            <h2>Current Research</h2>
+        <section id="research-summary" class="section">
+            <h2>Research Highlights</h2>
             <div class="projects-grid">
                 <div class="project">
                     <h3>Quantum Error Correction for NISQ Devices</h3>
-                    <p>Developing practical quantum error correction schemes for near-term quantum computers, focusing on surface codes and their variants for superconducting qubit platforms.</p>
-                    <div class="project-links">
-                        <a href="#"><i class="fas fa-file-pdf"></i> Preprint</a>
-                        <a href="#"><i class="fab fa-github"></i> Code</a>
-                    </div>
+                    <p>Developing practical quantum error correction schemes for near-term quantum computers...</p>
                 </div>
                 <div class="project">
                     <h3>Variational Quantum Algorithms</h3>
-                    <p>Investigating the trainability and performance of variational quantum eigensolvers for quantum chemistry applications, with emphasis on barren plateau mitigation strategies.</p>
-                    <div class="project-links">
-                        <a href="#"><i class="fas fa-external-link-alt"></i> Project Page</a>
-                        <a href="#"><i class="fab fa-github"></i> Code</a>
-                    </div>
+                    <p>Investigating the trainability and performance of variational quantum eigensolvers...</p>
                 </div>
-                <div class="project">
-                    <h3>Quantum Machine Learning</h3>
-                    <p>Exploring quantum advantage in machine learning tasks, developing quantum neural networks and studying their computational complexity compared to classical counterparts.</p>
-                    <div class="project-links">
-                        <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
-                        <a href="#"><i class="fas fa-play"></i> Demo</a>
-                    </div>
-                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="research.html" style="background: var(--usc-cardinal); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500;">View All Research →</a>
             </div>
         </section>
 
-        <section id="publications" class="section">
-            <h2>Publications</h2>
-                <div class="publication">
+        <section id="publications-summary" class="section">
+            <h2>Recent Publications</h2>
+            <div class="publication">
                 <h3>Efficient Quantum Error Correction for Surface Codes on Superconducting Processors</h3>
                 <div class="authors">Your Name, Collaborator A, Collaborator B, Advisor Name</div>
                 <div class="venue">Physical Review Letters (2024)</div>
-                <p>We present a novel <strong>decoding algorithm for surface codes</strong> that achieves a threshold of 1.2% with reduced computational overhead for <strong>quantum error correction</strong> on <strong>superconducting quantum processors</strong>...</p>
             </div>
             <div class="publication">
                 <h3>Variational Quantum Algorithms for Quantum Chemistry: A Comprehensive Study</h3>
                 <div class="authors">Your Name, Research Partner, Advisor Name</div>
                 <div class="venue">Quantum Science and Technology (2024)</div>
-                <p>A thorough investigation of <strong>VQE performance</strong> on molecular systems, including novel initialization strategies and gradient-free optimization methods for <strong>quantum chemistry</strong> applications...</p>
             </div>
-            <div class="publication">
-                <h3>Quantum Advantage in Machine Learning: Theory and Practice</h3>
-                <div class="authors">Your Name, Co-author, Advisor Name</div>
-                <div class="venue">Nature Quantum Information (2023)</div>
-                <p>We demonstrate provable <strong>quantum speedups</strong> for specific <strong>machine learning</strong> tasks and provide experimental validation on <strong>IBM quantum processors</strong>...</p>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="publications.html" style="background: var(--usc-cardinal); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500;">View All Publications →</a>
             </div>
         </section>
 
@@ -651,6 +623,24 @@
     </button>
 
     <script>
+        // Update navigation for multi-page
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href').startsWith('#')) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+        });
+
         // Smooth scrolling navigation
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
