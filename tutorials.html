@@ -36,6 +36,7 @@
             width: 100%;
             overflow-x: hidden;
             min-width: 320px;
+            padding-top: 80px; /* Account for fixed header */
         }
 
         .container {
@@ -45,7 +46,7 @@
             width: 100%;
         }
 
-        /* Header - Always Fixed */
+        /* Slim Fixed Header */
         header {
             background: linear-gradient(135deg, var(--usc-cardinal), var(--usc-dark-red));
             color: white;
@@ -133,7 +134,7 @@
             border-radius: 5px;
         }
 
-        /* Side Menu */
+        /* Side Menu for Mobile */
         .side-menu {
             position: fixed;
             top: 0;
@@ -211,11 +212,10 @@
             visibility: visible;
         }
 
-        /* Main Content - Account for Fixed Header */
+        /* Main Content */
         main {
             padding: 3rem 0;
             width: 100%;
-            margin-top: 80px; /* Fixed offset for header */
         }
 
         .section {
@@ -347,6 +347,10 @@
                 width: 280px;
                 right: -280px;
             }
+
+            .tutorial-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -371,7 +375,7 @@
     </style>
 </head>
 <body>
-    <header id="mainHeader">
+    <header>
         <div class="container">
             <div class="header-content">
                 <div class="header-left">
@@ -386,13 +390,13 @@
                 
                 <!-- Desktop Navigation -->
                 <ul class="desktop-nav">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
-                    <li><a href="publications.html" class="nav-link">Publications</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li><a href="tutorials.html" class="nav-link active">Tutorials</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="tutorials.html" class="active">Tutorials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
 
                 <!-- Mobile Menu Button -->
@@ -413,13 +417,13 @@
             </button>
         </div>
         <ul class="side-menu-links">
-            <li><a href="index.html" class="side-nav-link">Home</a></li>
-            <li><a href="about.html" class="side-nav-link">About</a></li>
-            <li><a href="research.html" class="side-nav-link">Research</a></li>
-            <li><a href="publications.html" class="side-nav-link">Publications</a></li>
-            <li><a href="projects.html" class="side-nav-link">Projects</a></li>
-            <li><a href="tutorials.html" class="side-nav-link active">Tutorials</a></li>
-            <li><a href="index.html#contact" class="side-nav-link">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="tutorials.html" class="active">Tutorials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </div>
 
@@ -640,189 +644,11 @@
         }
 
         // Close menu when clicking on a link
-        document.querySelectorAll('.side-nav-link').forEach(link => {
+        document.querySelectorAll('.side-menu-links a').forEach(link => {
             link.addEventListener('click', closeSideMenu);
         });
 
         // Close menu on window resize to desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                closeSideMenu();
-            }
-        });
-    </script>
-</body>
-</html>
-</html>
-                        <a href="#"><i class="fas fa-comments"></i> Discussion</a>
-                    </div>
-                </div>
-
-                <div class="tutorial">
-                    <div class="difficulty advanced">Advanced</div>
-                    <h3>Quantum Neural Networks: Theory and Implementation</h3>
-                    <div class="date">September 2023</div>
-                    <p>Deep dive into <strong>quantum neural networks</strong>, covering <strong>parameterized quantum circuits</strong>, <strong>gradient computation</strong>, and <strong>barren plateau mitigation</strong>. Includes implementations in Qiskit and PennyLane.</p>
-                    <div class="tutorial-links">
-                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
-                        <a href="#"><i class="fab fa-github"></i> Full Code</a>
-                        <a href="#"><i class="fas fa-flask"></i> Experiments</a>
-                    </div>
-                </div>
-
-                <div class="tutorial">
-                    <div class="difficulty intermediate">Intermediate</div>
-                    <h3>Quantum Feature Maps and Kernel Methods</h3>
-                    <div class="date">August 2023</div>
-                    <p>Explore how quantum computers can enhance classical machine learning through <strong>quantum feature maps</strong> and <strong>quantum kernels</strong>. Practical examples with real datasets and performance comparisons.</p>
-                    <div class="tutorial-links">
-                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
-                        <a href="#"><i class="fas fa-database"></i> Datasets</a>
-                        <a href="#"><i class="fab fa-python"></i> Notebooks</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Practical Quantum Programming</h2>
-            <div class="tutorial-grid">
-                <div class="tutorial">
-                    <div class="difficulty beginner">Beginner</div>
-                    <h3>Getting Started with Qiskit</h3>
-                    <div class="date">July 2023</div>
-                    <p>Complete beginner's guide to <strong>Qiskit</strong>, IBM's quantum computing framework. Covers installation, basic circuits, simulation, and running on real quantum hardware.</p>
-                    <div class="tutorial-links">
-                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
-                        <a href="#"><i class="fab fa-github"></i> Example Code</a>
-                        <a href="#"><i class="fas fa-video"></i> Video Series</a>
-                    </div>
-                </div>
-
-                <div class="tutorial">
-                    <div class="difficulty intermediate">Intermediate</div>
-                    <h3>Noise Characterization and Mitigation</h3>
-                    <div class="date">June 2023</div>
-                    <p>Learn how to characterize and mitigate noise in <strong>NISQ devices</strong>. Covers <strong>process tomography</strong>, <strong>randomized benchmarking</strong>, and practical error mitigation techniques.</p>
-                    <div class="tutorial-links">
-                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
-                        <a href="#"><i class="fas fa-chart-line"></i> Analysis Tools</a>
-                        <a href="#"><i class="fab fa-python"></i> Code Library</a>
-                    </div>
-                </div>
-
-                <div class="tutorial">
-                    <div class="difficulty advanced">Advanced</div>
-                    <h3>Quantum Algorithm Design Patterns</h3>
-                    <div class="date">May 2023</div>
-                    <p>Advanced guide to designing quantum algorithms, covering common patterns, optimization strategies, and how to adapt classical algorithms for quantum advantage.</p>
-                    <div class="tutorial-links">
-                        <a href="#"><i class="fas fa-book-open"></i> Read Tutorial</a>
-                        <a href="#"><i class="fas fa-lightbulb"></i> Design Patterns</a>
-                        <a href="#"><i class="fas fa-code"></i> Algorithm Library</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Video Lectures & Workshops</h2>
-            <div class="tutorial">
-                <h3>Quantum Computing Workshop Series</h3>
-                <div class="date">Ongoing - Updated Monthly</div>
-                <p>Regular workshop series covering fundamental and advanced topics in quantum computing. Each session includes theoretical background, practical examples, and Q&A segments.</p>
-                <div class="tutorial-links">
-                    <a href="#"><i class="fab fa-youtube"></i> Watch Playlist</a>
-                    <a href="#"><i class="fas fa-calendar"></i> Schedule</a>
-                    <a href="#"><i class="fas fa-download"></i> Slides</a>
-                </div>
-            </div>
-
-            <div class="tutorial">
-                <h3>Guest Lecture: "The Future of Quantum Computing"</h3>
-                <div class="date">March 2024</div>
-                <p>Invited lecture at USC discussing the current state and future prospects of quantum computing, covering both near-term applications and long-term quantum advantage scenarios.</p>
-                <div class="tutorial-links">
-                    <a href="#"><i class="fab fa-youtube"></i> Watch Lecture</a>
-                    <a href="#"><i class="fas fa-file-pdf"></i> Presentation</a>
-                    <a href="#"><i class="fas fa-question-circle"></i> Q&A Session</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Interactive Learning Tools</h2>
-            <p>Explore quantum concepts through interactive simulations and visualization tools designed to make quantum computing more accessible and intuitive.</p>
-            
-            <div class="tutorial-grid">
-                <div class="tutorial">
-                    <h3>Quantum Circuit Visualizer</h3>
-                    <p>Interactive tool for building and visualizing quantum circuits, with real-time state evolution and measurement probability calculations.</p>
-                    <div class="tutorial-links">
-                        <a href="#"><i class="fas fa-play"></i> Launch Tool</a>
-                        <a href="#"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-
-                <div class="tutorial">
-                    <h3>Quantum Error Correction Simulator</h3>
-                    <p>Simulate various quantum error correction codes and explore how they protect quantum information against different types of noise.</p>
-                    <div class="tutorial-links">
-                        <a href="#"><i class="fas fa-play"></i> Try Simulator</a>
-                        <a href="#"><i class="fas fa-info-circle"></i> User Guide</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 [Your Name]. All rights reserved. | University of Southern California</p>
-            <p>Built with passion for quantum computing and education</p>
-        </div>
-    </footer>
-
-    <script>
-        // Header scroll effect
-        const header = document.getElementById('mainHeader');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const sideMenu = document.getElementById('sideMenu');
-        const sideMenuClose = document.getElementById('sideMenuClose');
-        const menuOverlay = document.getElementById('menuOverlay');
-
-        function openSideMenu() {
-            sideMenu.classList.add('active');
-            menuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSideMenu() {
-            sideMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        mobileMenuBtn.addEventListener('click', openSideMenu);
-        sideMenuClose.addEventListener('click', closeSideMenu);
-        menuOverlay.addEventListener('click', closeSideMenu);
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.side-nav-link').forEach(link => {
-            link.addEventListener('click', closeSideMenu);
-        });
-
-        // Prevent horizontal scroll on mobile
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 closeSideMenu();
