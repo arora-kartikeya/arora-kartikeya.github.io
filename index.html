@@ -623,29 +623,19 @@
     </button>
 
     <script>
-        // Update navigation for multi-page
+        // Navigation handling - distinguish between internal and external links
         document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href').startsWith('#')) {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+            const href = link.getAttribute('href');
+            
+            // If it's an external page link (not starting with #), don't prevent default
+            if (!href.startsWith('#')) {
+                return; // Let the browser handle the navigation normally
             }
-        });
-
-        // Smooth scrolling navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
+            
+            // For internal hash links, handle smooth scrolling
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const targetId = link.getAttribute('href');
+                const targetId = href;
                 const targetSection = document.querySelector(targetId);
                 
                 if (targetSection) {
@@ -681,10 +671,10 @@
             });
         });
 
-        // Active section highlighting
+        // Active section highlighting for internal hash links only
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('.section');
-            const navLinks = document.querySelectorAll('.nav-link');
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]'); // Only hash links
             
             let currentSection = '';
             
@@ -697,6 +687,7 @@
                 }
             });
             
+            // Only update active state for hash links on current page
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${currentSection}`) {
