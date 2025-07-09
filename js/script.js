@@ -2,18 +2,28 @@
 const hamburger = document.querySelector('#hamburger');
 const navMenu = document.querySelector('#nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on nav links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-});
+
+    // Close mobile menu when clicking on nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+}
 
 // Navbar scroll effect
 const navbar = document.querySelector('#navbar');
@@ -144,10 +154,13 @@ window.addEventListener('load', () => {
     }
 });
 
-// Quantum circuit animation - improved performance
+// Quantum circuit animation - improved for mobile
 function animateQuantumCircuit() {
     const gates = document.querySelectorAll('.quantum-gate');
     if (gates.length === 0) return;
+    
+    // Don't animate on very small screens to improve performance
+    if (window.innerWidth <= 480) return;
     
     gates.forEach((gate, index) => {
         setTimeout(() => {
@@ -163,12 +176,14 @@ function animateQuantumCircuit() {
 window.addEventListener('load', () => {
     setTimeout(() => {
         animateQuantumCircuit();
-        // Restart animation every 8 seconds
-        setInterval(animateQuantumCircuit, 8000);
+        // Only restart animation on desktop
+        if (window.innerWidth > 768) {
+            setInterval(animateQuantumCircuit, 8000);
+        }
     }, 1500);
 });
 
-// Parallax effect for hero section - improved with mobile optimization
+// Parallax effect for hero section - desktop only
 let ticking = false;
 
 function updateParallax() {
@@ -184,7 +199,7 @@ function updateParallax() {
             element.style.transform = `translateY(${yPos}px)`;
         } else {
             // Reset transform on mobile
-            element.style.transform = 'translateY(0)';
+            element.style.transform = 'none';
         }
     });
     
@@ -192,7 +207,7 @@ function updateParallax() {
 }
 
 function requestParallaxUpdate() {
-    if (!ticking) {
+    if (!ticking && window.innerWidth > 768) {
         requestAnimationFrame(updateParallax);
         ticking = true;
     }
@@ -207,8 +222,15 @@ window.addEventListener('resize', () => {
     
     if (isMobile) {
         parallaxElements.forEach(element => {
-            element.style.transform = 'translateY(0)';
+            element.style.transform = 'none';
         });
+    }
+    
+    // Restart or stop quantum animation based on screen size
+    if (isMobile) {
+        clearInterval(window.quantumInterval);
+    } else if (!window.quantumInterval) {
+        window.quantumInterval = setInterval(animateQuantumCircuit, 8000);
     }
 });
 
