@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>[Your Name] - Quantum Computing PhD Student | USC Physics</title>
+    <meta name="title" content="[Your Name] - Quantum Computing PhD Student | USC Physics">
+    <meta name="description" content="PhD student in Physics at USC specializing in quantum computing research, quantum algorithms, and quantum error correction. Explore my research, publications, and educational tutorials.">
+    <meta name="keywords" content="quantum computing, quantum algorithms, quantum error correction, physics PhD, USC, quantum machine learning, quantum simulation, quantum cryptography, research, publications">
+    <meta name="author" content="[Your Name]">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/">
+    <meta property="og:title" content="[Your Name] - Quantum Computing PhD Student | USC Physics">
+    <meta property="og:description" content="PhD student in Physics at USC specializing in quantum computing research, quantum algorithms, and quantum error correction. Explore my research, publications, and educational tutorials.">
+    <meta property="og:image" content="https://yourusername.github.io/profile-image.jpg">
+    <meta property="og:site_name" content="[Your Name] - Academic Portfolio">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/">
+    <meta property="twitter:title" content="[Your Name] - Quantum Computing PhD Student | USC Physics">
+    <meta property="twitter:description" content="PhD student in Physics at USC specializing in quantum computing research, quantum algorithms, and quantum error correction. Explore my research, publications, and educational tutorials.">
+    <meta property="twitter:image" content="https://yourusername.github.io/profile-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourusername.github.io/">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "[Your Name]",
+        "jobTitle": "PhD Student in Physics",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "University of Southern California",
+            "url": "https://usc.edu"
+        },
+        "url": "https://yourusername.github.io/",
+        "image": "https://yourusername.github.io/profile-image.jpg",
+        "sameAs": [
+            "https://scholar.google.com/citations?user=YOUR_ID",
+            "https://github.com/yourusername",
+            "https://linkedin.com/in/yourprofile",
+            "https://orcid.org/0000-0000-0000-0000"
+        ],
+        "knowsAbout": [
+            "Quantum Computing",
+            "Quantum Algorithms",
+            "Quantum Error Correction",
+            "Quantum Machine Learning",
+            "Quantum Physics",
+            "Quantum Simulation"
+        ],
+        "alumniOf": {
+            "@type": "Organization",
+            "name": "University of Southern California"
+        },
+        "email": "youremail@usc.edu",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Los Angeles",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <style>
+        :root {
+            --usc-cardinal: #990000;
+            --usc-gold: #FFCC00;
+            --usc-dark-red: #7A0000;
+            --text-dark: #2c3e50;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--usc-cardinal), var(--usc-dark-red));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--usc-gold);
+            object-fit: cover;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-light);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-text .title {
+            font-size: 1.2rem;
+            color: var(--usc-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .header-text .affiliation {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--usc-dark-red);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--usc-gold);
+            color: var(--usc-cardinal);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--usc-gold);
+            color: var(--usc-cardinal);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .section h2 {
+            color: var(--usc-cardinal);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--usc-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .research-interests {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--usc-cardinal);
+        }
+
+        .research-interests h3 {
+            color: var(--usc-cardinal);
+            margin-bottom: 1rem;
+        }
+
+        .research-interests ul {
+            list-style: none;
+        }
+
+        .research-interests li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .research-interests li:before {
+            content: "▶";
+            color: var(--usc-gold);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Publications */
+        .publication {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--usc-cardinal);
+            transition: transform 0.3s ease;
+        }
+
+        .publication:hover {
+            transform: translateX(5px);
+        }
+
+        .publication h3 {
+            color: var(--usc-cardinal);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication .authors {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication .venue {
+            font-weight: bold;
+            color: var(--usc-dark-red);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .project {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--usc-cardinal);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
+            color: var(--usc-cardinal);
+            margin-bottom: 1rem;
+        }
+
+        .project-links {
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            color: var(--usc-cardinal);
+            text-decoration: none;
+            margin-right: 1rem;
+            font-weight: 500;
+        }
+
+        .project-links a:hover {
+            color: var(--usc-gold);
+        }
+
+        /* Tutorials */
+        .tutorial {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--usc-gold);
+        }
+
+        .tutorial h3 {
+            color: var(--usc-cardinal);
+            margin-bottom: 0.5rem;
+        }
+
+        .tutorial .date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--usc-cardinal);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--usc-cardinal);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            background: var(--usc-gold);
+            color: var(--usc-cardinal);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="header-text">
+                    <h1>[Your Name]</h1>
+                    <div class="title">PhD Student in Physics</div>
+                    <div class="affiliation">Quantum Computing Research | University of Southern California</div>
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="mailto:youremail@usc.edu" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#tutorials" class="nav-link">Tutorials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Welcome to my academic portfolio! I am a <strong>PhD student in Physics</strong> at the <strong>University of Southern California</strong>, specializing in <strong>quantum computing research</strong>. My work focuses on developing novel <strong>quantum algorithms</strong> and exploring the fundamental limits of <strong>quantum information processing</strong>.</p>
+                    
+                    <p>I am passionate about making <strong>quantum computing accessible</strong> through education and outreach. Through this website, I share <strong>tutorials</strong>, <strong>research insights</strong>, and resources for students and researchers interested in <strong>quantum computing</strong> and <strong>quantum physics</strong>.</p>
+                    
+                    <p>My research is supervised by [Advisor Name] in the [Lab Name] at <strong>USC</strong>, where I collaborate with an interdisciplinary team of physicists, computer scientists, and engineers to push the boundaries of <strong>quantum computation</strong>.</p>
+                </div>
+                <div class="research-interests">
+                    <h3>Research Interests</h3>
+                    <ul>
+                        <li>Quantum Algorithms</li>
+                        <li>Quantum Error Correction</li>
+                        <li>Quantum Machine Learning</li>
+                        <li>Quantum Optimization</li>
+                        <li>Quantum Simulation</li>
+                        <li>Quantum Cryptography</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <h2>Current Research</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <h3>Quantum Error Correction for NISQ Devices</h3>
+                    <p>Developing practical quantum error correction schemes for near-term quantum computers, focusing on surface codes and their variants for superconducting qubit platforms.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-file-pdf"></i> Preprint</a>
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Variational Quantum Algorithms</h3>
+                    <p>Investigating the trainability and performance of variational quantum eigensolvers for quantum chemistry applications, with emphasis on barren plateau mitigation strategies.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Project Page</a>
+                        <a href="#"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Quantum Machine Learning</h3>
+                    <p>Exploring quantum advantage in machine learning tasks, developing quantum neural networks and studying their computational complexity compared to classical counterparts.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="#"><i class="fas fa-play"></i> Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <h2>Publications</h2>
+                <div class="publication">
+                <h3>Efficient Quantum Error Correction for Surface Codes on Superconducting Processors</h3>
+                <div class="authors">Your Name, Collaborator A, Collaborator B, Advisor Name</div>
+                <div class="venue">Physical Review Letters (2024)</div>
+                <p>We present a novel <strong>decoding algorithm for surface codes</strong> that achieves a threshold of 1.2% with reduced computational overhead for <strong>quantum error correction</strong> on <strong>superconducting quantum processors</strong>...</p>
+            </div>
+            <div class="publication">
+                <h3>Variational Quantum Algorithms for Quantum Chemistry: A Comprehensive Study</h3>
+                <div class="authors">Your Name, Research Partner, Advisor Name</div>
+                <div class="venue">Quantum Science and Technology (2024)</div>
+                <p>A thorough investigation of <strong>VQE performance</strong> on molecular systems, including novel initialization strategies and gradient-free optimization methods for <strong>quantum chemistry</strong> applications...</p>
+            </div>
+            <div class="publication">
+                <h3>Quantum Advantage in Machine Learning: Theory and Practice</h3>
+                <div class="authors">Your Name, Co-author, Advisor Name</div>
+                <div class="venue">Nature Quantum Information (2023)</div>
+                <p>We demonstrate provable <strong>quantum speedups</strong> for specific <strong>machine learning</strong> tasks and provide experimental validation on <strong>IBM quantum processors</strong>...</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Open Source Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <h3>QuantumVQE</h3>
+                    <p>A Python library for variational quantum eigensolvers with advanced optimization techniques and noise mitigation strategies.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fas fa-book"></i> Documentation</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>QEC-Simulator</h3>
+                    <p>High-performance quantum error correction simulator with support for various code families and noise models.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fas fa-play"></i> Demo</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Quantum-ML-Toolkit</h3>
+                    <p>Educational toolkit for quantum machine learning with interactive Jupyter notebooks and visualization tools.</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Binder</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tutorials" class="section">
+            <h2>Tutorials & Blog Posts</h2>
+            <div class="tutorial">
+                <h3>Introduction to Quantum Error Correction</h3>
+                <div class="date">January 2024</div>
+                <p>A comprehensive guide to <strong>quantum error correction</strong>, covering the basics of <strong>quantum noise</strong>, <strong>stabilizer codes</strong>, and practical implementations for <strong>NISQ devices</strong>.</p>
+            </div>
+            <div class="tutorial">
+                <h3>Building Your First Variational Quantum Algorithm</h3>
+                <div class="date">December 2023</div>
+                <p>Step-by-step tutorial on implementing <strong>VQE from scratch</strong>, including <strong>quantum circuit design</strong>, optimization, and <strong>error mitigation techniques</strong>.</p>
+            </div>
+            <div class="tutorial">
+                <h3>Quantum Machine Learning: Separating Hype from Reality</h3>
+                <div class="date">November 2023</div>
+                <p>An honest assessment of <strong>quantum machine learning</strong> prospects, discussing current limitations and future possibilities in <strong>quantum AI</strong>.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact & Collaboration</h2>
+            <div class="about-grid">
+                <div>
+                    <p>I'm always interested in discussing quantum computing research, potential collaborations, or educational opportunities. Feel free to reach out!</p>
+                    
+                    <p><strong>Office:</strong> [Building Name], Room [Number]<br>
+                    <strong>Email:</strong> youremail@usc.edu<br>
+                    <strong>Office Hours:</strong> Tuesdays and Thursdays, 2-4 PM</p>
+                    
+                    <p>For students interested in quantum computing, I regularly host informal discussion sessions on quantum algorithms and their implementations.</p>
+                </div>
+                <div class="research-interests">
+                    <h3>Current Opportunities</h3>
+                    <ul>
+                        <li>Undergraduate research positions</li>
+                        <li>Industry collaboration projects</li>
+                        <li>Conference speaking opportunities</li>
+                        <li>Peer review for quantum computing journals</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 [Your Name]. All rights reserved. | University of Southern California</p>
+            <p>Built with passion for quantum computing and education</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Smooth scrolling navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active navigation
+                    document.querySelectorAll('.nav-link').forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Active section highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
