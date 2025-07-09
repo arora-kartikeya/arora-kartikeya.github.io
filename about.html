@@ -324,11 +324,12 @@
 
                     <h3>Curriculum Vitae</h3>
                     <div style="margin-top: 1rem;">
-                        <a href="assets/cv.pdf" target="_blank" style="display: inline-block; background: var(--usc-cardinal); color: white; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 5px; font-weight: 500; margin-bottom: 0.5rem;">
+                        <!-- Check if CV PDF exists, otherwise show placeholder -->
+                        <a href="assets/cv.pdf" target="_blank" onclick="return checkPDFExists(this)" style="display: inline-block; background: var(--usc-cardinal); color: white; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 5px; font-weight: 500; margin-bottom: 0.5rem;">
                             <i class="fas fa-file-pdf"></i> Download CV (PDF)
                         </a>
                         <br>
-                        <a href="#cv-section" style="display: inline-block; background: var(--usc-gold); color: var(--usc-cardinal); padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 5px; font-weight: 500; margin-bottom: 0.5rem;">
+                        <a href="#cv-section" onclick="scrollToCV()" style="display: inline-block; background: var(--usc-gold); color: var(--usc-cardinal); padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 5px; font-weight: 500; margin-bottom: 0.5rem;">
                             <i class="fas fa-scroll"></i> View CV Below
                         </a>
                         <br>
@@ -341,7 +342,7 @@
         <section class="section" id="cv-section">
             <h2>Curriculum Vitae</h2>
             <div style="margin-bottom: 2rem;">
-                <p>Here's a comprehensive overview of my academic and professional background. You can also <a href="assets/cv.pdf" target="_blank" style="color: var(--usc-cardinal); font-weight: 500;">download the full PDF version</a> of my CV.</p>
+                <p>Here's a comprehensive overview of my academic and professional background. You can also download the PDF version or view the print-friendly version below.</p>
             </div>
 
             <!-- CV Preview/Embedded Version -->
@@ -488,12 +489,16 @@
                 </div>
 
                 <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--usc-gold);">
-                    <a href="assets/cv.pdf" target="_blank" style="background: var(--usc-cardinal); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500; margin-right: 1rem;">
+                    <a href="assets/cv.pdf" target="_blank" onclick="return checkPDFExists(this)" style="background: var(--usc-cardinal); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500; margin-right: 1rem; margin-bottom: 0.5rem; display: inline-block;">
                         <i class="fas fa-download"></i> Download PDF Version
                     </a>
-                    <a href="assets/cv-print.html" target="_blank" style="background: var(--usc-gold); color: var(--usc-cardinal); padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500;">
+                    <a href="assets/cv-print.html" target="_blank" style="background: var(--usc-gold); color: var(--usc-cardinal); padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500; display: inline-block;">
                         <i class="fas fa-print"></i> Print-Friendly Version
                     </a>
+                    <br><br>
+                    <button onclick="window.print()" style="background: var(--usc-dark-red); color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; font-weight: 500; cursor: pointer;">
+                        <i class="fas fa-print"></i> Print This Page
+                    </button>
                 </div>
             </div>
         </section>
@@ -505,5 +510,48 @@
             <p>Built with passion for quantum computing and education</p>
         </div>
     </footer>
+
+    <script>
+        function scrollToCV() {
+            const cvSection = document.getElementById('cv-section');
+            if (cvSection) {
+                cvSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            return false; // Prevent default link behavior
+        }
+
+        function checkPDFExists(link) {
+            // Try to fetch the PDF to see if it exists
+            fetch(link.href, { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        // PDF doesn't exist, show alert
+                        alert('CV PDF is not yet available. Please view the web version below or use the print-friendly version.');
+                        return false;
+                    } else {
+                        // PDF exists, proceed with download
+                        window.open(link.href, '_blank');
+                    }
+                })
+                .catch(error => {
+                    // Error accessing PDF, show alert
+                    alert('CV PDF is not yet available. Please view the web version below or use the print-friendly version.');
+                });
+            return false; // Always prevent default to handle with JavaScript
+        }
+
+        // Smooth scrolling for hash links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if there's a hash in the URL
+            if (window.location.hash === '#cv-section') {
+                setTimeout(() => {
+                    scrollToCV();
+                }, 100);
+            }
+        });
+    </script>
 </body>
 </html>
