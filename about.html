@@ -28,12 +28,14 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%; /* Ensure full width usage */
         }
 
         /* Header */
@@ -42,12 +44,19 @@
             color: white;
             padding: 2rem 0;
             box-shadow: 0 2px 10px var(--shadow);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        header.scrolled {
+            padding: 1rem 0;
         }
 
         .header-content {
             display: flex;
             align-items: center;
             gap: 2rem;
+            transition: all 0.3s ease;
         }
 
         .profile-image {
@@ -62,23 +71,48 @@
             justify-content: center;
             font-size: 3rem;
             color: var(--text-light);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        header.scrolled .profile-image {
+            width: 80px;
+            height: 80px;
+            font-size: 2rem;
         }
 
         .header-text h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled .header-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
         }
 
         .header-text .title {
             font-size: 1.2rem;
             color: var(--usc-gold);
             margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled .header-text .title {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
         }
 
         .header-text .affiliation {
             font-size: 1rem;
             opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled .header-text .affiliation {
+            font-size: 0.9rem;
         }
 
         /* Navigation */
@@ -88,6 +122,20 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
         }
 
         .nav-links {
@@ -95,6 +143,7 @@
             list-style: none;
             gap: 2rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -104,6 +153,7 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             font-weight: 500;
+            white-space: nowrap;
         }
 
         .nav-links a:hover, .nav-links a.active {
@@ -111,11 +161,28 @@
             color: var(--usc-cardinal);
         }
 
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
         /* Social Links */
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
+            flex-wrap: wrap;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled .social-links {
+            gap: 0.5rem;
+            margin-top: 0.5rem;
         }
 
         .social-links a {
@@ -127,6 +194,11 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        header.scrolled .social-links a {
+            font-size: 1.2rem;
+            padding: 0.3rem;
+        }
+
         .social-links a:hover {
             background: var(--usc-gold);
             color: var(--usc-cardinal);
@@ -136,6 +208,7 @@
         /* Main Content */
         main {
             padding: 3rem 0;
+            width: 100%;
         }
 
         .section {
@@ -144,6 +217,9 @@
             background: var(--white);
             border-radius: 10px;
             box-shadow: 0 5px 15px var(--shadow);
+            width: 100%;
+            max-width: 100%;
+            overflow-wrap: break-word;
         }
 
         .section h2 {
@@ -159,11 +235,14 @@
             grid-template-columns: 2fr 1fr;
             gap: 2rem;
             margin-top: 1rem;
+            width: 100%;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
+            width: 100%;
+            overflow-wrap: break-word;
         }
 
         .research-interests {
@@ -171,6 +250,7 @@
             padding: 1.5rem;
             border-radius: 8px;
             border-left: 4px solid var(--usc-cardinal);
+            width: 100%;
         }
 
         .research-interests h3 {
@@ -202,26 +282,145 @@
             text-align: center;
             padding: 2rem 0;
             margin-top: 4rem;
+            width: 100%;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Ensure readable text on mobile */
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
             .header-content {
                 flex-direction: column;
                 text-align: center;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
                 gap: 1rem;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+
+            header.scrolled .profile-image {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
             }
 
             .header-text h1 {
                 font-size: 2rem;
+            }
+
+            header.scrolled .header-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--usc-dark-red);
+                padding: 1rem;
+                box-shadow: 0 2px 10px var(--shadow);
+                gap: 0.5rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.8rem 1rem;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: relative;
+            }
+
+            .nav-container {
+                justify-content: center;
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                position: absolute;
+                right: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.7rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            header.scrolled .social-links {
+                gap: 0.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+
+            header.scrolled .header-text h1 {
+                font-size: 1.3rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* iPad specific fixes */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .container {
+                max-width: 100%;
+                padding: 0 30px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
             }
         }
     </style>
@@ -259,17 +458,22 @@
         </div>
     </header>
 
-    <nav>
+    <nav id="mainNav">
         <div class="container">
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="research.html" class="nav-link">Research</a></li>
-                <li><a href="publications.html" class="nav-link">Publications</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="publications.html" class="nav-link">Publications</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -512,6 +716,45 @@
     </footer>
 
     <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const mainNav = document.getElementById('mainNav');
+        const header = document.querySelector('header');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-link')) {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+                mainNav.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+                mainNav.classList.remove('scrolled');
+            }
+        });
+
         function scrollToCV() {
             const cvSection = document.getElementById('cv-section');
             if (cvSection) {
@@ -520,36 +763,71 @@
                     block: 'start'
                 });
             }
-            return false; // Prevent default link behavior
+            return false;
         }
 
         function checkPDFExists(link) {
-            // Try to fetch the PDF to see if it exists
-            fetch(link.href, { method: 'HEAD' })
-                .then(response => {
-                    if (!response.ok) {
-                        // PDF doesn't exist, show alert
-                        alert('CV PDF is not yet available. Please view the web version below or use the print-friendly version.');
-                        return false;
-                    } else {
-                        // PDF exists, proceed with download
-                        window.open(link.href, '_blank');
-                    }
-                })
-                .catch(error => {
-                    // Error accessing PDF, show alert
+            // For mobile devices, try a different approach
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // On mobile, directly try to open the PDF
+                const tempLink = document.createElement('a');
+                tempLink.href = link.href;
+                tempLink.download = 'CV.pdf';
+                tempLink.target = '_blank';
+                tempLink.rel = 'noopener noreferrer';
+                
+                // Try to open the PDF
+                try {
+                    tempLink.click();
+                } catch (error) {
+                    // If it fails, show the alert
                     alert('CV PDF is not yet available. Please view the web version below or use the print-friendly version.');
-                });
-            return false; // Always prevent default to handle with JavaScript
+                }
+            } else {
+                // Desktop approach with fetch
+                fetch(link.href, { method: 'HEAD' })
+                    .then(response => {
+                        if (!response.ok) {
+                            alert('CV PDF is not yet available. Please view the web version below or use the print-friendly version.');
+                        } else {
+                            window.open(link.href, '_blank');
+                        }
+                    })
+                    .catch(error => {
+                        alert('CV PDF is not yet available. Please view the web version below or use the print-friendly version.');
+                    });
+            }
+            return false;
         }
 
         // Smooth scrolling for hash links
         document.addEventListener('DOMContentLoaded', function() {
-            // Check if there's a hash in the URL
             if (window.location.hash === '#cv-section') {
                 setTimeout(() => {
                     scrollToCV();
                 }, 100);
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Prevent horizontal scroll on mobile
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
     </script>
