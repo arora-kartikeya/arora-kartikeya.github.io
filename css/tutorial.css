@@ -1,0 +1,195 @@
+/* Tutorial specific styles */
+:root {
+    --usc-cardinal: #990000;
+    --usc-gold: #FFCC00;
+    --dark-gray: #333333;
+    --light-gray: #f4f4f4;
+    --white: #ffffff;
+    --code-bg: #f8f8f8;
+    --note-bg: #e6f7ff;
+    --example-bg: #f0f7e6;
+}
+
+#tutorial-header {
+    background-color: var(--light-gray);
+    padding: 40px 0;
+    text-align: center;
+}
+
+#tutorial-header h1 {
+    color: var(--usc-cardinal);
+    margin-bottom: 10px;
+}
+
+.meta {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.tags {
+    margin: 15px 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--usc-gold);
+    color: var(--dark-gray);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+#tutorial-content {
+    padding: 50px 0;
+}
+
+.tutorial-nav {
+    float: left;
+    width: 25%;
+    position: sticky;
+    top: 100px;
+}
+
+.toc {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.toc h3 {
+    color: var(--usc-cardinal);
+    margin-bottom: 15px;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc li {
+    margin-bottom: 10px;
+}
+
+.toc a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.toc a:hover {
+    color: var(--usc-cardinal);
+}
+
+.tutorial-article {
+    float: right;
+    width: 70%;
+}
+
+.tutorial-article section {
+    margin-bottom: 40px;
+}
+
+.tutorial-article h2 {
+    color: var(--usc-cardinal);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.tutorial-article p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.tutorial-article ul, .tutorial-article ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.tutorial-article li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.equation {
+    background-color: var(--code-bg);
+    padding: 15px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.note {
+    background-color: var(--note-bg);
+    border-left: 4px solid #1890ff;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.example {
+    background-color: var(--example-bg);
+    border-left: 4px solid #52c41a;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.next-tutorial {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.tutorial-feedback {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.feedback-buttons {
+    margin: 15px 0;
+}
+
+.btn-small {
+    display: inline-block;
+    background-color: var(--usc-cardinal);
+    color: var(--white);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.btn-small:hover {
+    background-color: #800000;
+}
+
+#feedback-text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 100px;
+}
+
+/* Responsive styles */
+@media(max-width: 768px) {
+    .tutorial-nav, 
+    .tutorial-article {
+        float: none;
+        width: 100%;
+    }
+    
+    .tutorial-nav {
+        position: static;
+        margin-bottom: 30px;
+    }
+}
