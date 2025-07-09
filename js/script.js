@@ -98,34 +98,69 @@ function highlightNavigation() {
 
 window.addEventListener('scroll', highlightNavigation);
 
-// Contact form handling
-const contactForm = document.querySelector('.contact-form form');
+// Contact form handling with Formspree
+const contactForm = document.querySelector('#contact-form');
+const submitBtn = document.querySelector('#submit-btn');
+const formStatus = document.querySelector('#form-status');
+
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
+        // Show loading state
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
         
-        // Simple form validation
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const subject = this.querySelectorAll('input[type="text"]')[1].value;
-        const message = this.querySelector('textarea').value;
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline-block';
+        submitBtn.disabled = true;
         
-        if (!name || !email || !subject || !message) {
-            alert('Please fill in all fields.');
-            return;
+        // Clear previous status
+        formStatus.innerHTML = '';
+        formStatus.className = 'form-status';
+        
+        try {
+            const formData = new FormData(this);
+            
+            // Send to Formspree
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Success
+                formStatus.innerHTML = `
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>Thank you for your message. I'll get back to you soon.</p>
+                    </div>
+                `;
+                formStatus.className = 'form-status success';
+                this.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            // Error
+            formStatus.innerHTML = `
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h4>Oops! Something went wrong.</h4>
+                    <p>Please try again or contact me directly at <a href="mailto:arorak@usc.edu">arorak@usc.edu</a></p>
+                </div>
+            `;
+            formStatus.className = 'form-status error';
+        } finally {
+            // Reset button state
+            btnText.style.display = 'inline-block';
+            btnLoading.style.display = 'none';
+            submitBtn.disabled = false;
         }
-        
-        // Here you would typically send the form data to a backend service
-        // For GitHub Pages, you might use a service like Formspree or Netlify Forms
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
     });
 }
 
