@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Quantum Computing | Kartikeya Arora</title>
+    <meta name="description" content="A comprehensive introduction to quantum computing fundamentals, covering qubits, superposition, entanglement, and basic quantum gates.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tutorial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Kartikeya Arora</a>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#research" class="nav-link">Research</a>
+                <a href="../index.html#publications" class="nav-link">Publications</a>
+                <a href="../index.html#tutorials" class="nav-link">Tutorials</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="tutorial-content">
+        <div class="container">
+            <article class="tutorial-article">
+                <header class="tutorial-header">
+                    <h1>Introduction to Quantum Computing</h1>
+                    <div class="tutorial-meta">
+                        <span class="date">March 15, 2024</span>
+                        <span class="reading-time">15 min read</span>
+                        <span class="difficulty">Beginner</span>
+                    </div>
+                </header>
+
+                <div class="tutorial-body">
+                    <section>
+                        <h2>What is Quantum Computing?</h2>
+                        <p>Quantum computing represents a revolutionary approach to computation that harnesses the principles of quantum mechanics to process information in fundamentally different ways than classical computers.</p>
+                        
+                        <p>While classical computers use bits that can be either 0 or 1, quantum computers use quantum bits (qubits) that can exist in a superposition of both states simultaneously.</p>
+                    </section>
+
+                    <section>
+                        <h2>Key Concepts</h2>
+                        
+                        <h3>Qubits</h3>
+                        <p>A qubit is the fundamental unit of quantum information. Unlike classical bits, qubits can exist in a superposition of |0⟩ and |1⟩ states:</p>
+                        
+                        <div class="math-equation">
+                            |ψ⟩ = α|0⟩ + β|1⟩
+                        </div>
+                        
+                        <p>Where α and β are complex numbers called probability amplitudes.</p>
+
+                        <h3>Superposition</h3>
+                        <p>Superposition allows quantum systems to exist in multiple states simultaneously until measured. This property enables quantum computers to explore many computational paths in parallel.</p>
+
+                        <h3>Entanglement</h3>
+                        <p>Quantum entanglement is a phenomenon where qubits become correlated in such a way that the state of one qubit instantaneously affects the state of another, regardless of distance.</p>
+                    </section>
+
+                    <section>
+                        <h2>Basic Quantum Gates</h2>
+                        <p>Quantum gates are the building blocks of quantum circuits. Here are some fundamental gates:</p>
+                        
+                        <h3>Pauli-X Gate (NOT Gate)</h3>
+                        <p>Flips the state of a qubit: |0⟩ → |1⟩ and |1⟩ → |0⟩</p>
+                        
+                        <h3>Hadamard Gate</h3>
+                        <p>Creates superposition by transforming |0⟩ → (|0⟩ + |1⟩)/√2</p>
+                        
+                        <h3>CNOT Gate</h3>
+                        <p>A two-qubit gate that flips the target qubit if the control qubit is |1⟩</p>
+                    </section>
+
+                    <section>
+                        <h2>Simple Example: Creating Superposition</h2>
+                        <p>Let's look at a simple quantum circuit using Qiskit:</p>
+                        
+                        <pre><code class="language-python">
+from qiskit import QuantumCircuit, execute, Aer
+from qiskit.visualization import plot_histogram
+
+# Create a quantum circuit with 1 qubit
+qc = QuantumCircuit(1, 1)
+
+# Apply Hadamard gate to create superposition
+qc.h(0)
+
+# Measure the qubit
+qc.measure(0, 0)
+
+# Execute the circuit
+backend = Aer.get_backend('qasm_simulator')
+job = execute(qc, backend, shots=1000)
+result = job.result()
+counts = result.get_counts(qc)
+
+print(counts)
+                        </code></pre>
+                        
+                        <p>This circuit creates a superposition state and then measures it. You should see approximately equal probabilities for both |0⟩ and |1⟩ outcomes.</p>
+                    </section>
+
+                    <section>
+                        <h2>Quantum Advantage</h2>
+                        <p>Quantum computers excel in specific problem domains:</p>
+                        <ul>
+                            <li><strong>Cryptography:</strong> Shor's algorithm for factoring large numbers</li>
+                            <li><strong>Optimization:</strong> Solving complex optimization problems</li>
+                            <li><strong>Simulation:</strong> Modeling quantum systems and molecules</li>
+                            <li><strong>Machine Learning:</strong> Quantum machine learning algorithms</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Next Steps</h2>
+                        <p>To continue your quantum computing journey:</p>
+                        <ol>
+                            <li>Install Qiskit and try the examples</li>
+                            <li>Learn about quantum algorithms like Grover's search</li>
+                            <li>Explore quantum error correction</li>
+                            <li>Study quantum complexity theory</li>
+                        </ol>
+                    </section>
+                </div>
+
+                <footer class="tutorial-footer">
+                    <div class="tutorial-tags">
+                        <span class="tag">Quantum Computing</span>
+                        <span class="tag">Physics</span>
+                        <span class="tag">Tutorial</span>
+                        <span class="tag">Beginner</span>
+                    </div>
+                    
+                    <div class="tutorial-navigation">
+                        <a href="../index.html#tutorials" class="btn btn-secondary">← Back to Tutorials</a>
+                        <a href="qiskit-tutorial.html" class="btn btn-primary">Next: Qiskit Tutorial →</a>
+                    </div>
+                </footer>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Kartikeya Arora. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
