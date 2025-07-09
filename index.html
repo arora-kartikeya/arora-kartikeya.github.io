@@ -420,6 +420,36 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 1rem;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                background: var(--usc-gold);
+                color: var(--usc-cardinal);
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: 500;
+            }
         }
 
         /* Animations */
@@ -464,6 +494,76 @@
             background: var(--usc-gold);
             color: var(--usc-cardinal);
         }
+
+        /* Side Menu */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 900;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background: var(--usc-cardinal);
+            color: white;
+            padding: 2rem;
+            box-shadow: -2px 0 10px var(--shadow);
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+
+        .side-menu.active {
+            right: 0;
+        }
+
+        .side-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .side-menu-close {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .side-menu-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side-nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        .side-nav-link:hover, .side-nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -495,23 +595,48 @@
                         </a>
                     </div>
                 </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
     <nav id="mainNav">
         <div class="container">
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="research.html" class="nav-link">Research</a></li>
-                <li><a href="publications.html" class="nav-link">Publications</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="publications.html" class="nav-link">Publications</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <!-- Side Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <h3 style="color: var(--usc-gold); margin: 0;">Menu</h3>
+            <button class="side-menu-close" id="sideMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="side-menu-links">
+            <li><a href="index.html" class="side-nav-link active">Home</a></li>
+            <li><a href="about.html" class="side-nav-link">About</a></li>
+            <li><a href="research.html" class="side-nav-link">Research</a></li>
+            <li><a href="publications.html" class="side-nav-link">Publications</a></li>
+            <li><a href="projects.html" class="side-nav-link">Projects</a></li>
+            <li><a href="tutorials.html" class="side-nav-link">Tutorials</a></li>
+            <li><a href="#contact" class="side-nav-link">Contact</a></li>
+        </ul>
+    </div>
 
     <main class="container">
         <section id="about-summary" class="section">
@@ -665,6 +790,49 @@
     </button>
 
     <script>
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuClose = document.getElementById('sideMenuClose');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function openSideMenu() {
+            sideMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSideMenu() {
+            sideMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openSideMenu);
+        sideMenuClose.addEventListener('click', closeSideMenu);
+        menuOverlay.addEventListener('click', closeSideMenu);
+
+        document.querySelectorAll('.side-nav-link').forEach(link => {
+            link.addEventListener('click', closeSideMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeSideMenu();
+            }
+        });
+
         // Navigation handling - distinguish between internal and external links
         document.querySelectorAll('.nav-link').forEach(link => {
             const href = link.getAttribute('href');
