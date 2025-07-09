@@ -3,107 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kartikeya Arora - Quantum Computing Researcher and PhD Candidate at USC">
-    <meta name="keywords" content="quantum computing, electrical engineering, USC, PhD, research">
-    <title>Kartikeya Arora | Quantum Computing Researcher</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Kartikeya Arora | Quantum Computing Researcher | USC</title>
+    <meta name="description" content="PhD student in Electrical Engineering at USC specializing in quantum computing theory. Research, publications, and tutorials on quantum algorithms and quantum information.">
+    <meta name="keywords" content="quantum computing, quantum algorithms, electrical engineering, USC, PhD, research, quantum information theory">
+    <meta name="author" content="Kartikeya Arora">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arora-kartikeya.github.io/">
+    <meta property="og:title" content="Kartikeya Arora | Quantum Computing Researcher">
+    <meta property="og:description" content="PhD student in Electrical Engineering at USC specializing in quantum computing theory.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Kartikeya Arora | Quantum Computing Researcher">
+    <meta property="twitter:description" content="PhD student in Electrical Engineering at USC specializing in quantum computing theory.">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kartikeya Arora",
+        "jobTitle": "PhD Student",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "University of Southern California"
+        },
+        "knowsAbout": ["Quantum Computing", "Quantum Algorithms", "Electrical Engineering"],
+        "url": "https://arora-kartikeya.github.io/"
+    }
+    </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><a href="index.html">Kartikeya Arora</a></h1>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Kartikeya Arora</a>
             </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="tutorials.html">Tutorials</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#publications" class="nav-link">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tutorials" class="nav-link">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section id="showcase">
-        <div class="container">
-            <div class="profile-container">
-                <img src="assets/profile.jpg" alt="Kartikeya Arora" class="profile-image">
-                <div class="profile-info">
-                    <h1>Kartikeya Arora</h1>
-                    <h2>Electrical Engineering PhD Student</h2>
-                    <h3>University of Southern California</h3>
-                    <p>Specializing in Quantum Computing</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Kartikeya Arora</span>
+                    </h1>
+                    <p class="hero-subtitle">PhD Student in Electrical Engineering</p>
+                    <p class="hero-description">
+                        Advancing quantum computing theory at USC. Exploring quantum algorithms, 
+                        quantum information, and the mathematical foundations of quantum computation.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#research" class="btn btn-primary">View Research</a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
                     <div class="social-links">
-                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://github.com/arora-kartikeya" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/your-profile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://twitter.com/your-handle" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="mailto:your-email@usc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com" target="_blank" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://github.com/arora-kartikeya" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://orcid.org" target="_blank" aria-label="ORCID">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="mailto:kartikeya@usc.edu" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="quantum-visualization">
+                        <div class="quantum-circuit">
+                            <div class="qubit-line"></div>
+                            <div class="qubit-line"></div>
+                            <div class="qubit-line"></div>
+                            <div class="quantum-gate gate-1"></div>
+                            <div class="quantum-gate gate-2"></div>
+                            <div class="quantum-gate gate-3"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="highlights">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <h2>Research Highlights</h2>
-            <div class="highlight-boxes">
-                <div class="box">
-                    <i class="fas fa-atom"></i>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a PhD student in Electrical Engineering at the University of Southern California, 
+                        where I focus on the theoretical aspects of quantum computing. My research interests 
+                        span quantum algorithms, quantum complexity theory, and quantum information processing.
+                    </p>
+                    <p>
+                        I am passionate about bridging the gap between theoretical quantum computing concepts 
+                        and practical implementations. Through my research and tutorials, I aim to make 
+                        quantum computing more accessible to the broader scientific community.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <h4>University of Southern California</h4>
+                                <p>PhD in Electrical Engineering</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-atom"></i>
+                            <div>
+                                <h4>Research Focus</h4>
+                                <p>Quantum Computing Theory</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div>
+                                <h4>Teaching</h4>
+                                <p>Quantum Computing Tutorials</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="assets/profile.jpg" alt="Kartikeya Arora" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
                     <h3>Quantum Algorithms</h3>
-                    <p>Developing novel quantum algorithms with applications in machine learning and optimization.</p>
+                    <p>Developing novel quantum algorithms for optimization problems and exploring their computational advantages over classical approaches.</p>
                 </div>
-                <div class="box">
-                    <i class="fas fa-microchip"></i>
-                    <h3>Quantum Hardware</h3>
-                    <p>Investigating error mitigation techniques for superconducting quantum processors.</p>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Quantum Information Theory</h3>
+                    <p>Investigating quantum entanglement, quantum error correction, and information-theoretic aspects of quantum systems.</p>
                 </div>
-                <div class="box">
-                    <i class="fas fa-code-branch"></i>
-                    <h3>Quantum Software</h3>
-                    <p>Creating tools and frameworks for quantum circuit simulation and optimization.</p>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Quantum Complexity</h3>
+                    <p>Analyzing the computational complexity of quantum algorithms and exploring the boundaries between classical and quantum computation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="latest">
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
         <div class="container">
-            <h2>Latest News</h2>
-            <div class="news-item">
-                <h3>July 2023</h3>
-                <p>Our paper on quantum error correction has been accepted at IEEE Quantum Week 2023!</p>
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h3>Efficient Quantum Algorithms for Graph Problems</h3>
+                    <p class="publication-authors">K. Arora, et al.</p>
+                    <p class="publication-venue">arXiv preprint (2024)</p>
+                    <div class="publication-links">
+                        <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                        <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> arXiv</a>
+                    </div>
+                </div>
+                <!-- Add more publications as needed -->
             </div>
-            <div class="news-item">
-                <h3>May 2023</h3>
-                <p>Presented our research on quantum machine learning at the International Quantum Computing Conference.</p>
+            <div class="publications-note">
+                <p>For a complete list of publications, visit my <a href="https://scholar.google.com" target="_blank">Google Scholar profile</a>.</p>
             </div>
-            <div class="news-item">
-                <h3>January 2023</h3>
-                <p>New tutorial on quantum circuit optimization published in the Tutorials section.</p>
-            </div>
-            <a href="news.html" class="btn">More News</a>
         </div>
     </section>
 
-    <footer>
+    <!-- Tutorials Section -->
+    <section id="tutorials" class="tutorials">
         <div class="container">
-            <p>&copy; 2023 Kartikeya Arora | PhD Candidate, Electrical Engineering | University of Southern California</p>
-            <div class="social-links">
-                <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://github.com/arora-kartikeya" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/your-profile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/your-handle" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <h2 class="section-title">Tutorials & Resources</h2>
+            <div class="tutorials-grid">
+                <div class="tutorial-card">
+                    <h3>Introduction to Quantum Computing</h3>
+                    <p>A beginner-friendly guide to quantum computing fundamentals, covering qubits, gates, and basic algorithms.</p>
+                    <a href="tutorials/intro-quantum-computing.html" class="tutorial-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="tutorial-card">
+                    <h3>Quantum Algorithm Implementation</h3>
+                    <p>Step-by-step implementation of quantum algorithms using popular quantum computing frameworks.</p>
+                    <a href="tutorials/quantum-algorithms.html" class="tutorial-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="tutorial-card">
+                    <h3>Quantum Error Correction</h3>
+                    <p>Understanding quantum error correction codes and their implementation in noisy intermediate-scale quantum devices.</p>
+                    <a href="tutorials/quantum-error-correction.html" class="tutorial-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>kartikeya@usc.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Los Angeles, CA</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h4>Institution</h4>
+                            <p>University of Southern California</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Kartikeya Arora. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#research">Research</a>
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
