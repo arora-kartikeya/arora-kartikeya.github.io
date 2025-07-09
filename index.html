@@ -650,8 +650,8 @@
                         block: 'start'
                     });
                     
-                    // Update active navigation
-                    document.querySelectorAll('.nav-link').forEach(navLink => {
+                    // Update active navigation for hash links only
+                    document.querySelectorAll('.nav-link[href^="#"]').forEach(navLink => {
                         navLink.classList.remove('active');
                     });
                     link.classList.add('active');
