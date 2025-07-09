@@ -4,14 +4,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - [Your Name] | USC Physics</title>
-    <!-- Include same meta tags and styles as main page -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Copy all styles from main page -->
     <style>
-        /* Copy all CSS from main page */
+        :root {
+            --usc-cardinal: #990000;
+            --usc-gold: #FFCC00;
+            --usc-dark-red: #7A0000;
+            --text-dark: #2c3e50;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--usc-cardinal), var(--usc-dark-red));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--usc-gold);
+            object-fit: cover;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-light);
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-text .title {
+            font-size: 1.2rem;
+            color: var(--usc-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .header-text .affiliation {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--usc-dark-red);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--usc-gold);
+            color: var(--usc-cardinal);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--usc-gold);
+            color: var(--usc-cardinal);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .section h2 {
+            color: var(--usc-cardinal);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--usc-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .publication {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--usc-cardinal);
+            transition: transform 0.3s ease;
+        }
+
+        .publication:hover {
+            transform: translateX(5px);
+        }
+
+        .publication h3 {
+            color: var(--usc-cardinal);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication .authors {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication .venue {
+            font-weight: bold;
+            color: var(--usc-dark-red);
+        }
+
+        /* Year sections */
         .year-section {
             margin-bottom: 3rem;
         }
+
         .year-header {
             background: var(--usc-cardinal);
             color: white;
@@ -21,6 +197,7 @@
             font-size: 1.5rem;
             font-weight: bold;
         }
+
         .publication-stats {
             background: var(--bg-light);
             padding: 2rem;
@@ -28,26 +205,31 @@
             margin-bottom: 2rem;
             text-align: center;
         }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
             margin-top: 1rem;
         }
+
         .stat-item {
             background: white;
             padding: 1rem;
             border-radius: 5px;
             box-shadow: 0 2px 5px var(--shadow);
         }
+
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
             color: var(--usc-cardinal);
         }
+
         .publication-links {
             margin-top: 1rem;
         }
+
         .publication-links a {
             display: inline-block;
             background: var(--usc-cardinal);
@@ -59,15 +241,70 @@
             font-size: 0.9rem;
             transition: all 0.3s ease;
         }
+
         .publication-links a:hover {
             background: var(--usc-gold);
             color: var(--usc-cardinal);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--usc-cardinal);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- Copy header from main page -->
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="header-text">
+                    <h1>[Your Name]</h1>
+                    <div class="title">PhD Student in Physics</div>
+                    <div class="affiliation">Quantum Computing Research | University of Southern California</div>
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="mailto:youremail@usc.edu" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
     <nav>
