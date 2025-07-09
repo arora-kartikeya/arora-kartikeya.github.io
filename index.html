@@ -162,23 +162,37 @@
             justify-content: center;
             font-size: 3rem;
             color: var(--text-light);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        header.scrolled .profile-image {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            border-width: 2px;
         }
 
         .header-text h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled .header-text h1 {
+            font-size: 1.3rem;
         }
 
         .header-text .title {
             font-size: 1.2rem;
             color: var(--usc-gold);
-            margin-bottom: 0.5rem;
+            margin: 0;
+            transition: all 0.3s ease;
         }
 
-        .header-text .affiliation {
-            font-size: 1rem;
-            opacity: 0.9;
+        header.scrolled .header-text .title {
+            font-size: 0.9rem;
         }
 
         /* Navigation */
@@ -495,80 +509,10 @@
             background: var(--usc-gold);
             color: var(--usc-cardinal);
         }
-
-        /* Side Menu */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 900;
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .side-menu {
-            position: fixed;
-            top: 0;
-            right: -250px;
-            width: 250px;
-            height: 100%;
-            background: var(--usc-cardinal);
-            color: white;
-            padding: 2rem;
-            box-shadow: -2px 0 10px var(--shadow);
-            transition: right 0.3s ease;
-            z-index: 1000;
-        }
-
-        .side-menu.active {
-            right: 0;
-        }
-
-        .side-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .side-menu-close {
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .side-menu-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .side-nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: block;
-            transition: background 0.3s ease;
-        }
-
-        .side-nav-link:hover, .side-nav-link.active {
-            background: rgba(255, 255, 255, 0.1);
-        }
     </style>
 </head>
 <body>
-    <header>
+    <header id="mainHeader">
         <div class="container">
             <div class="header-content">
                 <div class="header-left">
@@ -772,7 +716,7 @@
     </button>
 
     <script>
-        // Header scroll effect
+        // Header scroll effect - index-specific
         const header = document.getElementById('mainHeader');
         
         window.addEventListener('scroll', () => {
