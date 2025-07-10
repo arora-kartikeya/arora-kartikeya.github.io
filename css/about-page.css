@@ -1,0 +1,573 @@
+/* About Page Specific Styles */
+
+.about-hero {
+    padding: 120px 0 80px 0;
+    background: linear-gradient(135deg, rgba(153, 0, 0, 0.05), rgba(255, 204, 0, 0.05));
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-hero .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--usc-cardinal);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.cv-download {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--usc-gold);
+}
+
+.profile-details h3 {
+    color: var(--usc-cardinal);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.fact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+}
+
+.fact-item i {
+    color: var(--usc-cardinal);
+    width: 20px;
+    text-align: center;
+}
+
+/* Biography Section */
+.biography {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.bio-content h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.bio-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+.bio-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.bio-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.bio-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.highlight-card {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-card i {
+    font-size: 2.5rem;
+    color: var(--usc-cardinal);
+    margin-bottom: 1rem;
+}
+
+.highlight-card h4 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.highlight-card p {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Education Section */
+.education {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.education-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--usc-cardinal);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 80px;
+}
+
+.timeline-item.current .timeline-content {
+    background: linear-gradient(135deg, rgba(153, 0, 0, 0.05), rgba(255, 204, 0, 0.05));
+    border-left: 4px solid var(--usc-cardinal);
+}
+
+.timeline-date {
+    position: absolute;
+    left: -45px;
+    top: 0;
+    background: var(--usc-cardinal);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -65px;
+    top: 60px;
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border: 3px solid var(--usc-cardinal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-icon i {
+    color: var(--usc-cardinal);
+    font-size: 1.2rem;
+}
+
+.timeline-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    color: var(--usc-cardinal);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-content li {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.timeline-content li::before {
+    content: '•';
+    color: var(--usc-cardinal);
+    position: absolute;
+    left: 0;
+}
+
+/* Skills Section */
+.skills {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.skill-category h3 {
+    color: var(--usc-cardinal);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-item span {
+    display: block;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+    background: var(--white);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--gradient);
+    transition: width 1s ease;
+    border-radius: 4px;
+}
+
+/* Experience Section */
+.experience {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.experience-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.experience-header h3 {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+}
+
+.experience-period {
+    background: var(--usc-cardinal);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.experience-item h4 {
+    color: var(--usc-cardinal);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.experience-item p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.experience-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-item li {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.experience-item li::before {
+    content: '•';
+    color: var(--usc-cardinal);
+    position: absolute;
+    left: 0;
+}
+
+/* Awards Section */
+.awards {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.award-item {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.award-item:hover {
+    transform: translateY(-5px);
+}
+
+.award-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.award-icon i {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.award-item h3 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.award-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.award-year {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--usc-cardinal);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Active nav link styling */
+.nav-link.active {
+    color: var(--usc-cardinal);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .cv-download {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .bio-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        padding-left: 60px;
+    }
+    
+    .timeline-date {
+        left: -35px;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+    }
+    
+    .timeline-icon {
+        left: -50px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .awards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        padding: 100px 0 60px 0;
+    }
+    
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .cv-download .btn {
+        width: 200px;
+    }
+    
+    .profile-card {
+        padding: 1.5rem;
+    }
+    
+    .bio-text p {
+        font-size: 1rem;
+    }
+    
+    .education-timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        padding-left: 50px;
+    }
+    
+    .timeline-date {
+        left: -25px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+    
+    .timeline-icon {
+        left: -40px;
+        width: 25px;
+        height: 25px;
+    }
+}
