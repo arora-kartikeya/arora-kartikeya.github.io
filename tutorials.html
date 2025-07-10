@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Computing Tutorials | Kartikeya Arora</title>
+    <meta name="description" content="Comprehensive tutorials on quantum computing fundamentals, algorithms, and practical implementations. Learn quantum computing from theory to practice.">
+    <meta name="keywords" content="quantum computing tutorials, quantum algorithms, qubits, quantum gates, quantum programming">
+    <meta name="author" content="Kartikeya Arora">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arora-kartikeya.github.io/tutorials.html">
+    <meta property="og:title" content="Quantum Computing Tutorials | Kartikeya Arora">
+    <meta property="og:description" content="Learn quantum computing through comprehensive tutorials covering theory and practical implementations.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tutorials-page.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Kartikeya Arora</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#publications" class="nav-link">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tutorials.html" class="nav-link active">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tutorials-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Quantum Computing Tutorials</h1>
+                <p>Master quantum computing through comprehensive, hands-on tutorials covering everything from basic concepts to advanced implementations.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Tutorials</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Difficulty Levels</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free Content</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All Tutorials</button>
+                <button class="filter-btn" data-filter="beginner">Beginner</button>
+                <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+                <button class="filter-btn" data-filter="advanced">Advanced</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Grid -->
+    <section class="tutorials-content">
+        <div class="container">
+            <div class="tutorials-grid">
+                <!-- Beginner Tutorials -->
+                <div class="tutorial-card" data-level="beginner">
+                    <div class="tutorial-header">
+                        <div class="tutorial-level beginner">Beginner</div>
+                        <div class="tutorial-duration">
+                            <i class="fas fa-clock"></i> 15 min
+                        </div>
+                    </div>
+                    <h3>Introduction to Quantum Computing</h3>
+                    <p>A comprehensive introduction to quantum computing fundamentals, covering qubits, quantum gates, and basic quantum algorithms.</p>
+                    <div class="tutorial-topics">
+                        <span class="topic-tag">Qubits</span>
+                        <span class="topic-tag">Superposition</span>
+                        <span class="topic-tag">Entanglement</span>
+                    </div>
+                    <div class="tutorial-footer">
+                        <span class="tutorial-date">
+                            <i class="fas fa-calendar"></i> Dec 2024
+                        </span>
+                        <a href="tutorials/intro-quantum-computing.html" class="tutorial-link">
+                            Read Tutorial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-level="beginner">
+                    <div class="tutorial-header">
+                        <div class="tutorial-level beginner">Beginner</div>
+                        <div class="tutorial-duration">
+                            <i class="fas fa-clock"></i> 20 min
+                        </div>
+                    </div>
+                    <h3>Quantum Gates and Circuits</h3>
+                    <p>Learn about quantum gates, how to build quantum circuits, and understand the building blocks of quantum algorithms.</p>
+                    <div class="tutorial-topics">
+                        <span class="topic-tag">Quantum Gates</span>
+                        <span class="topic-tag">Circuits</span>
+                        <span class="topic-tag">Pauli Gates</span>
+                    </div>
+                    <div class="tutorial-footer">
+                        <span class="tutorial-date">
+                            <i class="fas fa-calendar"></i> Dec 2024
+                        </span>
+                        <a href="tutorials/quantum-gates.html" class="tutorial-link">
+                            Read Tutorial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Intermediate Tutorials -->
+                <div class="tutorial-card" data-level="intermediate">
+                    <div class="tutorial-header">
+                        <div class="tutorial-level intermediate">Intermediate</div>
+                        <div class="tutorial-duration">
+                            <i class="fas fa-clock"></i> 30 min
+                        </div>
+                    </div>
+                    <h3>Quantum Algorithm Implementation</h3>
+                    <p>Step-by-step implementation of quantum algorithms using popular quantum computing frameworks like Qiskit and Cirq.</p>
+                    <div class="tutorial-topics">
+                        <span class="topic-tag">Qiskit</span>
+                        <span class="topic-tag">Algorithms</span>
+                        <span class="topic-tag">Programming</span>
+                    </div>
+                    <div class="tutorial-footer">
+                        <span class="tutorial-date">
+                            <i class="fas fa-calendar"></i> Dec 2024
+                        </span>
+                        <a href="tutorials/quantum-algorithms.html" class="tutorial-link">
+                            Read Tutorial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-level="intermediate">
+                    <div class="tutorial-header">
+                        <div class="tutorial-level intermediate">Intermediate</div>
+                        <div class="tutorial-duration">
+                            <i class="fas fa-clock"></i> 25 min
+                        </div>
+                    </div>
+                    <h3>Grover's Search Algorithm</h3>
+                    <p>Understand and implement Grover's algorithm for searching unsorted databases with quadratic speedup over classical methods.</p>
+                    <div class="tutorial-topics">
+                        <span class="topic-tag">Grover's Algorithm</span>
+                        <span class="topic-tag">Search</span>
+                        <span class="topic-tag">Amplitude Amplification</span>
+                    </div>
+                    <div class="tutorial-footer">
+                        <span class="tutorial-date">
+                            <i class="fas fa-calendar"></i> Dec 2024
+                        </span>
+                        <a href="tutorials/grovers-algorithm.html" class="tutorial-link">
+                            Read Tutorial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Advanced Tutorials -->
+                <div class="tutorial-card" data-level="advanced">
+                    <div class="tutorial-header">
+                        <div class="tutorial-level advanced">Advanced</div>
+                        <div class="tutorial-duration">
+                            <i class="fas fa-clock"></i> 45 min
+                        </div>
+                    </div>
+                    <h3>Quantum Error Correction</h3>
+                    <p>Understanding quantum error correction codes and their implementation in noisy intermediate-scale quantum devices.</p>
+                    <div class="tutorial-topics">
+                        <span class="topic-tag">Error Correction</span>
+                        <span class="topic-tag">NISQ</span>
+                        <span class="topic-tag">Stabilizer Codes</span>
+                    </div>
+                    <div class="tutorial-footer">
+                        <span class="tutorial-date">
+                            <i class="fas fa-calendar"></i> Dec 2024
+                        </span>
+                        <a href="tutorials/quantum-error-correction.html" class="tutorial-link">
+                            Read Tutorial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-level="advanced">
+                    <div class="tutorial-header">
+                        <div class="tutorial-level advanced">Advanced</div>
+                        <div class="tutorial-duration">
+                            <i class="fas fa-clock"></i> 40 min
+                        </div>
+                    </div>
+                    <h3>Variational Quantum Algorithms</h3>
+                    <p>Explore variational quantum algorithms like VQE and QAOA for optimization problems on near-term quantum devices.</p>
+                    <div class="tutorial-topics">
+                        <span class="topic-tag">VQE</span>
+                        <span class="topic-tag">QAOA</span>
+                        <span class="topic-tag">Optimization</span>
+                    </div>
+                    <div class="tutorial-footer">
+                        <span class="tutorial-date">
+                            <i class="fas fa-calendar"></i> Dec 2024
+                        </span>
+                        <a href="tutorials/variational-algorithms.html" class="tutorial-link">
+                            Read Tutorial <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Want to Suggest a Tutorial Topic?</h2>
+                <p>Have a specific quantum computing topic you'd like to see covered? Let me know and I'll consider creating a tutorial for it.</p>
+                <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Kartikeya Arora. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#research">Research</a>
+                    <a href="tutorials.html">Tutorials</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/tutorials.js"></script>
+</body>
+</html>
