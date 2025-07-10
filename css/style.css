@@ -414,6 +414,12 @@ body {
     gap: 2rem;
 }
 
+.research-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .research-card {
     background: var(--white);
     padding: 2rem;
@@ -421,6 +427,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     text-align: center;
+    height: 100%;
 }
 
 .research-card:hover {
