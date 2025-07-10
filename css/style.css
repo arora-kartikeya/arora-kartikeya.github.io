@@ -460,53 +460,102 @@ body {
     background: var(--white);
 }
 
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
 .publication-item {
     background: var(--light-gray);
     padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
+    border-radius: 15px;
     border-left: 4px solid var(--usc-cardinal);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.publication-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.publication-item.featured {
+    background: linear-gradient(135deg, rgba(153, 0, 0, 0.05), rgba(255, 204, 0, 0.05));
+    border-left-width: 6px;
+}
+
+.publication-year {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--usc-cardinal);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .publication-item h3 {
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     color: var(--text-dark);
+    line-height: 1.4;
+    padding-right: 60px;
 }
 
 .publication-authors {
     color: var(--text-light);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
 .publication-venue {
-    color: var(--text-light);
+    color: var(--usc-cardinal);
     font-style: italic;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 .publication-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .pub-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--usc-cardinal);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    background: var(--white);
+    border-radius: 15px;
+    transition: all 0.3s ease;
 }
 
 .pub-link:hover {
-    color: var(--usc-dark-gold);
+    background: var(--usc-cardinal);
+    color: var(--white);
+    transform: translateY(-2px);
 }
 
-.publications-note {
+.publications-footer {
     text-align: center;
-    margin-top: 2rem;
-    padding: 1.5rem;
+    padding: 2rem;
     background: var(--light-gray);
-    border-radius: 10px;
+    border-radius: 15px;
+}
+
+.publications-footer p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
 }
 
 /* Tutorials Section */
