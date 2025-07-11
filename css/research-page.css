@@ -338,6 +338,250 @@
     width: 100%;
 }
 
+/* Research Detail Page Styles */
+.research-detail {
+    padding: 60px 0;
+    background: var(--white);
+}
+
+.research-overview {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.research-overview h2 {
+    font-size: 2.2rem;
+    color: var(--usc-cardinal);
+    margin-bottom: 1.5rem;
+}
+
+.research-overview p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.area-card {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+}
+
+.area-card h3 {
+    color: var(--usc-cardinal);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.area-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.research-highlights h4 {
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.research-highlights ul {
+    list-style: none;
+    padding: 0;
+}
+
+.research-highlights li {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.research-highlights li::before {
+    content: '→';
+    color: var(--usc-cardinal);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Publications Section */
+.publications-section {
+    background: var(--light-gray);
+    padding: 3rem 0;
+    border-radius: 15px;
+    margin: 3rem 0;
+}
+
+.publications-section h2 {
+    text-align: center;
+    color: var(--usc-cardinal);
+    margin-bottom: 2rem;
+}
+
+.publication-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.publication-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--usc-cardinal);
+}
+
+.publication-card h4 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.publication-card .authors {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.publication-card .venue {
+    color: var(--usc-cardinal);
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.pub-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.pub-link {
+    color: var(--usc-cardinal);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    background: var(--light-gray);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.pub-link:hover {
+    background: var(--usc-cardinal);
+    color: var(--white);
+}
+
+/* Project Details */
+.project-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.project-details p {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.project-details strong {
+    color: var(--text-dark);
+}
+
+/* Code Resources */
+.code-resources {
+    margin-top: 3rem;
+}
+
+.code-resources h2 {
+    text-align: center;
+    color: var(--usc-cardinal);
+    margin-bottom: 2rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.resource-card {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+}
+
+.resource-card h4 {
+    color: var(--usc-cardinal);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.resource-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.resource-link {
+    color: var(--usc-cardinal);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--usc-cardinal);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.resource-link:hover {
+    background: var(--usc-cardinal);
+    color: var(--white);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-top: 1rem;
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: var(--usc-cardinal);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .research-grid {
