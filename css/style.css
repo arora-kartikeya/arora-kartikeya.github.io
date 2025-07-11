@@ -73,25 +73,12 @@ body {
     gap: 0.5rem;
 }
 
-.nav-logo .favicon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
-}
-
-.nav-logo:hover .favicon {
-    transform: scale(1.1);
-}
-
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--usc-cardinal);
     text-decoration: none;
     transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .nav-logo a:hover {
@@ -1004,6 +991,19 @@ body {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+    
+    .nav-link {
+        padding: 0.5rem 0;
+        display: block;
+    }
+}
+
+/* Responsive adjustments for favicon */
+@media (max-width: 480px) {
+    .nav-logo a {
+        font-size: 1.3rem;
+    }
+}
     
     .nav-link {
         padding: 0.5rem 0;
