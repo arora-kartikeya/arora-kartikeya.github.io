@@ -998,11 +998,11 @@ body {
     }
 }
 
-/* Responsive adjustments for favicon */
 @media (max-width: 480px) {
     .nav-logo a {
         font-size: 1.3rem;
     }
+}
 }
     
     .nav-link {
