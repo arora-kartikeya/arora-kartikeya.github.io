@@ -305,23 +305,24 @@
     .filter-search-container {
         flex-direction: column;
         align-items: stretch;
-    }
-    
-    .filter-controls {
-        justify-content: center;
+        gap: 1rem;
     }
     
     .search-container {
         min-width: auto;
+        width: 100%;
     }
     
     .publication-item {
         padding: 1.5rem;
+        max-width: 100%;
     }
     
     .publication-item h3 {
         padding-right: 0;
         margin-bottom: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.3;
     }
     
     .publication-badge {
@@ -332,11 +333,15 @@
     
     .publication-links {
         gap: 0.5rem;
+        flex-wrap: wrap;
     }
     
     .pub-link {
         font-size: 0.8rem;
         padding: 6px 12px;
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
     }
 }
 
@@ -347,6 +352,7 @@
     
     .publications-hero h1 {
         font-size: 2rem;
+        word-wrap: break-word;
     }
     
     .hero-stats {
@@ -354,16 +360,30 @@
         gap: 1.5rem;
     }
     
-    .filter-btn {
-        padding: 8px 16px;
+    .external-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .external-link {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+    
+    .publication-item {
+        padding: 1rem;
+    }
+    
+    .publication-abstract {
         font-size: 0.9rem;
+        line-height: 1.5;
     }
     
-    .year-title {
-        font-size: 1.5rem;
-    }
-    
-    .publication-item h3 {
-        font-size: 1.1rem;
+    .pub-link {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        min-width: 100px;
     }
 }

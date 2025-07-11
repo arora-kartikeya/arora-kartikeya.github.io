@@ -264,25 +264,36 @@
     
     .tutorials-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .tutorial-card {
         padding: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .tutorial-header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
     
     .tutorial-footer {
         flex-direction: column;
         gap: 1rem;
         align-items: flex-start;
+        text-align: left;
     }
     
     .filter-controls {
         gap: 0.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .filter-btn {
         padding: 8px 16px;
         font-size: 0.9rem;
+        min-width: auto;
     }
 }
 
@@ -293,6 +304,11 @@
     
     .tutorials-hero h1 {
         font-size: 2rem;
+        word-wrap: break-word;
+    }
+    
+    .tutorials-hero p {
+        padding: 0 10px;
     }
     
     .hero-stats {
@@ -300,11 +316,21 @@
         gap: 1.5rem;
     }
     
-    .tutorial-card h3 {
-        font-size: 1.2rem;
+    .tutorial-card {
+        padding: 1rem;
     }
     
-    .cta-content h2 {
-        font-size: 1.5rem;
+    .tutorial-card h3 {
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    
+    .tutorial-topics {
+        gap: 0.3rem;
+    }
+    
+    .topic-tag {
+        font-size: 0.7rem;
+        padding: 2px 6px;
     }
 }
