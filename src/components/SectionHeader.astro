@@ -1,0 +1,13 @@
+---
+type Props = {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+};
+---
+
+<header class="section-header">
+  {Astro.props.eyebrow && <p class="eyebrow">{Astro.props.eyebrow}</p>}
+  <h1>{Astro.props.title}</h1>
+  {Astro.props.description && <p>{Astro.props.description}</p>}
+</header>

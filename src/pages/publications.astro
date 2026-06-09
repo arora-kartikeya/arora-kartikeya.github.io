@@ -1,0 +1,45 @@
+---
+import SectionHeader from "@/components/SectionHeader.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { formatAuthors, getPublications } from "@/utils/bibtex";
+
+const publications = await getPublications();
+---
+
+<BaseLayout
+  title="Publications"
+  description="Publications and preprints for Kartikeya Arora."
+>
+  <section class="page">
+    <SectionHeader
+      eyebrow="Publications"
+      title="Publications and preprints"
+      description="Entries are rendered from src/data/publications.bib, so real citations can be added by replacing the placeholder BibTeX."
+    />
+
+    <div class="stack">
+      {
+        publications.map((publication) => (
+          <article class="publication">
+            <p class="meta">{publication.year ?? "Year pending"}</p>
+            <h2>{publication.title}</h2>
+            <p>{formatAuthors(publication.author)}</p>
+            <p>
+              {publication.journal ?? publication.booktitle ?? publication.note ?? "Venue pending"}
+            </p>
+            <div class="link-list">
+              {publication.url && (
+                <a href={publication.url}>
+                  {publication.archivePrefix && publication.eprint
+                    ? `${publication.archivePrefix}:${publication.eprint}`
+                    : "Link"}
+                </a>
+              )}
+              {publication.doi && <a href={`https://doi.org/${publication.doi}`}>DOI</a>}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

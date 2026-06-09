@@ -1,0 +1,34 @@
+---
+import SectionHeader from "@/components/SectionHeader.astro";
+import TagList from "@/components/TagList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects")).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+---
+
+<BaseLayout title="Projects" description="Research and software projects.">
+  <section class="page">
+    <SectionHeader
+      eyebrow="Projects"
+      title="Projects"
+      description="Editable project pages can describe research directions, software, notes, or collaborations."
+    />
+
+    <div class="grid">
+      {
+        projects.map((project) => (
+          <article class="card">
+            <p class="meta">{project.data.status}</p>
+            <h2>{project.data.title}</h2>
+            <p>{project.data.description}</p>
+            <TagList tags={project.data.topics} />
+            <p><a href={`/projects/${project.id}/`}>Open project</a></p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

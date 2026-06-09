@@ -1,0 +1,25 @@
+---
+import LinkList from "@/components/LinkList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="CV" description="Curriculum vitae placeholder.">
+  <section class="page content">
+    <p class="eyebrow">CV</p>
+    <h1>Curriculum vitae</h1>
+    <p>
+      This page is ready for a public CV PDF. Add the file at
+      <code>public/files/Kartikeya_Arora_CV.pdf</code> and replace the
+      placeholder link when the document is ready.
+    </p>
+    <LinkList
+      links={[
+        {
+          label: "Download CV",
+          href: "/files/Kartikeya_Arora_CV.pdf",
+          placeholder: true
+        }
+      ]}
+    />
+  </section>
+</BaseLayout>

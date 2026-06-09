@@ -1,0 +1,15 @@
+---
+type Props = {
+  tags: string[];
+};
+---
+
+{
+  Astro.props.tags.length > 0 && (
+    <ul class="tags" role="list">
+      {Astro.props.tags.map((tag) => (
+        <li>{tag}</li>
+      ))}
+    </ul>
+  )
+}

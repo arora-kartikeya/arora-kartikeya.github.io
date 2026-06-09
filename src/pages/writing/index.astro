@@ -1,0 +1,40 @@
+---
+import SectionHeader from "@/components/SectionHeader.astro";
+import TagList from "@/components/TagList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("writing", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Writing" description="Tutorials, notes, and blog posts.">
+  <section class="page">
+    <SectionHeader
+      eyebrow="Writing"
+      title="Tutorials and notes"
+      description="MDX posts support equations, code snippets, and long-form notes for future tutorials and blog posts."
+    />
+
+    <div class="stack">
+      {
+        posts.map((post) => (
+          <article class="card">
+            <p class="meta">
+              {post.data.type} / {post.data.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric"
+              })}
+            </p>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            <TagList tags={post.data.tags} />
+            <p><a href={`/writing/${post.id}/`}>Read</a></p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

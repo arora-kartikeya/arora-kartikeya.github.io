@@ -1,0 +1,55 @@
+---
+import LinkList from "@/components/LinkList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/site.config";
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">{siteConfig.role}</p>
+      <h1>Quantum sensing and quantum information theory.</h1>
+      <p>
+        Kartikeya Arora is a second-year PhD student in Quntao Zhuang's group
+        at USC, working on quantum sensing and quantum information theory.
+      </p>
+      <LinkList links={siteConfig.externalLinks} />
+    </div>
+    <aside class="hero-details" aria-label="Profile details">
+      <div class="detail-block">
+        <span>Affiliation</span>
+        <strong>{siteConfig.affiliation}</strong>
+      </div>
+      <div class="detail-block">
+        <span>Research areas</span>
+        <strong>{siteConfig.researchAreas.join(" / ")}</strong>
+      </div>
+      <div class="detail-block">
+        <span>Email</span>
+        <strong><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></strong>
+      </div>
+    </aside>
+  </section>
+
+  <section class="page">
+    <div class="grid">
+      <article class="card">
+        <h2>Research</h2>
+        <p>
+          Current interests include theory for quantum-enhanced sensing,
+          information-theoretic limits, and protocols connecting sensing,
+          communication, and inference.
+        </p>
+        <a href="/research/">Read more</a>
+      </article>
+      <article class="card">
+        <h2>Writing</h2>
+        <p>
+          Tutorials and notes will collect background material, derivations, and
+          topic-focused explanations from quantum sensing and information theory.
+        </p>
+        <a href="/writing/">Browse writing</a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
