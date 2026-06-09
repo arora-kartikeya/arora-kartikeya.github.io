@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import bibSource from "../data/publications.bib?raw";
 
 export type Publication = {
   key: string;
@@ -17,12 +17,8 @@ export type Publication = {
 
 type BibFields = Record<string, string>;
 
-const bibPath = new URL("../data/publications.bib", import.meta.url);
-
 export async function getPublications(): Promise<Publication[]> {
-  const source = await readFile(bibPath, "utf-8");
-
-  return parseBibTeX(source).sort((a, b) => {
+  return parseBibTeX(bibSource).sort((a, b) => {
     const yearA = Number(a.year ?? 0);
     const yearB = Number(b.year ?? 0);
     return yearB - yearA || a.title.localeCompare(b.title);
